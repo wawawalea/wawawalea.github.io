@@ -4,90 +4,330 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lea Li 李冰睿</title>
-  <meta name="description" content="Lea Li, a student at NYU interested in LLM research: alignment, interpretability, and pre/post-training." />
-  <meta name="author" content="Lea Li" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>" />
+  <meta name="description" content="Lea Li, a student at NYU interested in L&D research: technical alignment, mechanistic interpretability, continual learning, and reasoning." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --line: #e8e8e8;
+      --line-dark: #cfcfcf;
+      --chip: #f7f7f7;
+      --hover: #f3f3f3;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+    }
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+    section { margin-top: 56px; }
+    h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; margin: 0; }
+    h1 { font-size: 2rem; line-height: 1.15; }
+    h2 { font-size: 1.2rem; margin-bottom: 14px; }
+    h3 { font-size: 1rem; }
+    p { margin: 0 0 14px; }
+    a { color: inherit; text-underline-offset: 2px; }
+    .muted { color: var(--muted); }
+    .masthead {
+      display: grid;
+      grid-template-columns: 104px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .photo-wrap {
+      width: 104px; height: 104px;
+      border-radius: 50%; overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fafafa;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .fallback {
+      color: #888;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+    }
+    .cn { font-weight: 500; color: var(--muted); }
+    .note { display: inline-block; font-weight: 400; color: var(--muted); font-size: 0.95rem; }
+    .affil { margin-top: 8px; color: var(--muted); }
+    .contact-line { color: var(--muted); margin-top: 8px; }
+    .about p:last-child { margin-bottom: 0; }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      background: var(--chip);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: #444;
+    }
+    .project-list {
+      border-top: 1px solid var(--line);
+    }
+    .project {
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0;
+    }
+    .project button {
+      all: unset;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+    }
+    .project button:hover .project-title { text-decoration: underline; text-underline-offset: 3px; }
+    .project-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+    }
+    .project-num { color: var(--muted); min-width: 64px; }
+    .project-main { flex: 1; }
+    .project-title { font-size: 1rem; font-weight: 600; }
+    .project-summary { color: var(--muted); margin-top: 4px; }
+    .drawer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease;
+    }
+    .drawer-inner {
+      padding: 14px 0 2px 64px;
+      color: #333;
+    }
+    .detail {
+      margin: 0 0 10px;
+    }
+    .detail-label {
+      display: inline-block;
+      min-width: 88px;
+      color: var(--muted);
+    }
+    .triptych-intro { max-width: 680px; }
+    .triptych {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .panel {
+      border-top: 1px solid var(--text);
+      padding-top: 14px;
+      min-height: 250px;
+    }
+    .panel-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .panel-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; }
+    .doodle {
+      width: 100%;
+      height: 120px;
+      margin: 10px 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .doodle svg { width: 100%; height: 100%; }
+    .panel-text { color: #333; font-size: 0.97rem; }
+    .placeholder {
+      width: 100%; height: 120px;
+      border: 1px dashed var(--line-dark);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin: 10px 0 14px;
+    }
+    footer {
+      margin-top: 60px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 720px) {
+      .masthead { grid-template-columns: 1fr; }
+      .project-row { display: block; }
+      .project-num { display: block; margin-bottom: 4px; }
+      .drawer-inner { padding-left: 0; }
+      .triptych { grid-template-columns: 1fr; gap: 28px; }
+      .panel { min-height: unset; }
+    }
+  </style>
 </head>
 <body>
   <main>
-    <!-- Masthead -->
     <header class="masthead">
-      <div class="photo-wrap"><img class="photo" src="profile.png" alt="Lea Li" /></div>
-      <div class="masthead-text">
-        <h1>Lea Li <span class="cn">李冰睿</span>
-          <span class="note">(just like water is
-          <a href="https://plato.stanford.edu/entries/rigid-designators/" target="_blank" rel="noopener">H<sub>2</sub>O</a>)</span>
+      <div class="photo-wrap">
+        <img class="photo" src="profile.png" alt="Lea Li" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="fallback" style="display:none;">LL</div>
+      </div>
+      <div>
+        <h1>
+          Lea Li <span class="cn">李冰睿</span>
+          <span class="note">(like water is <a href="https://plato.stanford.edu/entries/rigid-designators/" target="_blank" rel="noopener">H<sub>2</sub>O</a>)</span>
         </h1>
         <p class="affil">Student at NYU, interested in LLM research.</p>
         <p class="contact-line">
           <a href="mailto:bl3737@nyu.edu">bl3737@nyu.edu</a> &middot;
           <a href="https://github.com/wawawalea" target="_blank" rel="noopener">GitHub</a> &middot;
-          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
         </p>
       </div>
     </header>
 
-    <!-- About -->
-    <section id="about">
+    <section class="about" id="about">
       <h2>About</h2>
       <p>
-        I'm a senior at New York University studying Computer Science, Mathematics, and
-        Philosophy.
+        I'm a senior at New York University studying Computer Science, Mathematics, and Philosophy.
       </p>
       <p>
-        I'm drawn to a basic question: when we study alignment, pre-training, and post-training,
-        what are we actually studying? Which of the things we talk about are <em>real</em>, and
-        how do they depend on or cause one another? I like research that takes a vague intuition
-        and turns it into a claim you can actually test.
+        I am broadly interested in technical alignment, mechanistic interpretability, continual learning, effective reasoning, and post-training for language models.
       </p>
-      <p>
-        The tagline above is a small philosophy joke, but it points at something I really care
-        about: how the study of LLMs and other intelligent neural networks can be made genuinely
-        scientific, so that our assumptions about AI can be tested against evidence rather than
-        just asserted.
-      </p>
+      <div class="chips" aria-label="research keywords">
+        <span class="chip">On-policy self-distillation</span>
+        <span class="chip">Technical alignment</span>
+        <span class="chip">Mechanistic interpretability</span>
+        <span class="chip">Continual learning</span>
+        <span class="chip">Effective reasoning</span>
+        <span class="chip">Test-time scaling</span>
+      </div>
     </section>
 
-    <!-- Research -->
-    <section id="research">
-      <h2>Research</h2>
-      <p>
-        My research started with implementing and developing reinforcement learning algorithms.
-        Building and running the agent systems around them gave me a close, hands-on view of how
-        these models actually behave, and that's what pulled me toward mechanistic
-        interpretability, and toward asking not just <em>whether</em> a post-training method
-        works, but <em>why</em> it works, in precise mathematical terms.
-      </p>
-      <p>I am currently working on two threads:</p>
-      <p>
-        <strong>Causal study of LLM scheming.</strong>
-        A causal study of when and why language models "scheme," that is, quietly pursue goals
-        other than the ones we gave them, and what inside the model that behavior actually
-        depends on.
-      </p>
-      <p>
-        <strong>Efficient LLM post-training.</strong>
-        Designing training methods and pipelines that let a model pick up new skills without
-        retraining it from scratch every time, turning a careful, mathematical understanding of
-        post-training into systems that actually hold up at scale.
-      </p>
-    </section>
-
-    <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
-      <p class="muted">Selected projects coming soon.</p>
+      <div class="project-list">
+        <div class="project">
+          <button class="project-toggle" aria-expanded="false">
+            <div class="project-row">
+              <span class="project-num">Project 1</span>
+              <div class="project-main">
+                <div class="project-title">Oversight representations in language models</div>
+                <div class="project-summary">When a model behaves differently under supervision, what exactly is represented inside the model?</div>
+              </div>
+            </div>
+          </button>
+          <div class="drawer">
+            <div class="drawer-inner">
+              <p class="detail"><span class="detail-label">Object</span>Whether “being supervised” is a unified internal object, or a loose family of context-specific cues and policies.</p>
+              <p class="detail"><span class="detail-label">Dynamics</span>How supervision-related signals appear across prompts and settings, and whether they mediate downstream behavior in a causally meaningful way.</p>
+              <p class="detail"><span class="detail-label">Adaptation</span>Whether any such structure generalizes across scenarios, or only works in the local environments where it was identified.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <button class="project-toggle" aria-expanded="false">
+            <div class="project-row">
+              <span class="project-num">Project 2</span>
+              <div class="project-main">
+                <div class="project-title">On-policy self-distillation</div>
+                <div class="project-summary">When self-generated training improves a model, what is actually being learned, and by what system?</div>
+              </div>
+            </div>
+          </button>
+          <div class="drawer">
+            <div class="drawer-inner">
+              <p class="detail"><span class="detail-label">Object</span>The effective learner is not just the parameter vector, but the closed loop formed by the model, prompts, sampling policy, generated data, and update rule.</p>
+              <p class="detail"><span class="detail-label">Dynamics</span>How on-policy data generation, selection, and optimization interact to amplify some behaviors while leaving others unchanged.</p>
+              <p class="detail"><span class="detail-label">Adaptation</span>To what extent the learned changes transfer beyond the exact prompts and distributions used to produce the training data.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <button class="project-toggle" aria-expanded="false">
+            <div class="project-row">
+              <span class="project-num">Project 3</span>
+              <div class="project-main">
+                <div class="project-title">Overthinking in continual learning</div>
+                <div class="project-summary">How can a model learn task-appropriate reasoning across tasks rather than overthink in a one-size-fits-all way?</div>
+              </div>
+            </div>
+          </button>
+          <div class="drawer">
+            <div class="drawer-inner">
+              <p class="detail"><span class="detail-label">Object</span>Overthinking is not a single fixed defect, but a task-relative computation policy involving when to continue, verify, or stop.</p>
+              <p class="detail"><span class="detail-label">Dynamics</span>How signals for efficient reasoning differ across tasks, and how those signals evolve as the model keeps learning new settings.</p>
+              <p class="detail"><span class="detail-label">Adaptation</span>Whether a model can acquire reasoning policies that remain effective across tasks without collapsing into one locally good but globally brittle rule.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact -->
+    <section id="questions">
+      <h2>When studying a machine learning problem, I like to ask:</h2>
+      <div class="triptych">
+        <div class="panel">
+          <div class="panel-title">1. What is the object of the study?</div>
+          <div class="panel-sub">Before measuring or optimizing something, I want to know what the thing actually is.</div>
+          <div class="doodle" aria-hidden="true">
+            <svg viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 84C34 76 47 73 61 74C71 75 76 80 88 79C97 78 103 70 111 66C125 59 141 58 154 64C165 69 171 78 181 81C195 85 208 82 230 72" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M62 75C67 56 81 46 96 46C109 46 116 56 116 67" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="98" cy="56" r="1.7" fill="#111"/>
+              <path d="M110 58C118 51 126 49 136 50C151 52 160 61 161 73" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M160 74C163 63 173 56 184 56C194 56 202 62 205 73" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M202 69L214 63L206 75" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="panel-text">Sometimes the hardest part of a project is deciding whether the thing we are probing or optimizing is a real object at all.</p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">2. How does it work?</div>
+          <div class="panel-sub">Once an object is in view, I want to understand the dynamics that produce or use it.</div>
+          <div class="doodle" aria-hidden="true">
+            <svg viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 105H190" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M154 27C154 27 156 41 159 56" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M154 27C146 15 137 11 125 10" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M154 27C165 20 175 18 188 19" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M121 106C117 96 113 88 105 77C96 64 86 59 76 59" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="156" cy="60" r="9" stroke="#111" stroke-width="2.2"/>
+              <path d="M78 60C78 76 79 83 81 105" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M78 69C68 69 62 73 57 79" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M78 70C87 70 94 73 100 80" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M78 60C76 48 82 39 92 39C103 39 108 48 105 57" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="panel-text">I am interested in the mechanisms and learning dynamics behind a behavior, not just whether a metric moves.</p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">3. How do we study its adaptation, and to what extent?</div>
+          <div class="panel-sub">A local success is not yet a general one; I want to know what carries over, and where it breaks.</div>
+          <div class="placeholder">placeholder for sketch</div>
+          <p class="panel-text">In continual and post-training settings, the key question is often not whether change happened, but how far that change travels across tasks, prompts, and distributions.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p>
         Email: <a href="mailto:bl3737@nyu.edu">bl3737@nyu.edu</a><br />
         GitHub: <a href="https://github.com/wawawalea" target="_blank" rel="noopener">github.com/wawawalea</a>
       </p>
-      <p>I'm happy to talk about interpretability in AI alignment and pre/post-training, and anything related to that.</p>
     </section>
 
     <footer>
@@ -95,6 +335,22 @@
     </footer>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggles = document.querySelectorAll('.project-toggle');
+    toggles.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const drawer = btn.parentElement.querySelector('.drawer');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (expanded) {
+          drawer.style.maxHeight = '0px';
+        } else {
+          drawer.style.maxHeight = drawer.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
