@@ -3,8 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lea Li 李冰睿</title>
-  <meta name="description" content="Lea Li, a student at NYU interested in L&D research: technical alignment, mechanistic interpretability, continual learning, and reasoning." />
+  <title>Lea Li (李冰睿) — NYU | LLM Research</title>
+  <meta name="description" content="Lea Li (李冰睿) is a student at New York University (NYU) studying Computer Science, Mathematics, and Philosophy, interested in LLM research: technical alignment, mechanistic interpretability, continual learning, and reasoning." />
+  <meta name="author" content="Lea Li" />
+  <link rel="canonical" href="https://wawawalea.github.io/" />
+
+  <!-- Open Graph / social + richer indexing signals -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Lea Li (李冰睿) — NYU" />
+  <meta property="og:description" content="Lea Li, a student at NYU interested in LLM research: technical alignment, mechanistic interpretability, continual learning, and reasoning." />
+  <meta property="og:url" content="https://wawawalea.github.io/" />
+  <meta property="og:image" content="https://wawawalea.github.io/profile.png" />
+  <meta property="profile:first_name" content="Lea" />
+  <meta property="profile:last_name" content="Li" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Structured data: tells Google this page is about the person "Lea Li" at NYU -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lea Li",
+    "alternateName": "李冰睿",
+    "url": "https://wawawalea.github.io/",
+    "image": "https://wawawalea.github.io/profile.png",
+    "email": "mailto:bl3737@nyu.edu",
+    "jobTitle": "Student",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "New York University",
+      "alternateName": "NYU"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "New York University"
+    },
+    "knowsAbout": [
+      "Large Language Models",
+      "Technical AI Alignment",
+      "Mechanistic Interpretability",
+      "Continual Learning",
+      "Reasoning"
+    ],
+    "sameAs": [
+      "https://github.com/wawawalea"
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #ffffff;
@@ -79,6 +124,17 @@
       font-size: 0.92rem;
       color: #444;
     }
+    .pub-list {
+      border-top: 1px solid var(--line);
+    }
+    .pub {
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+    }
+    .pub-title { font-size: 1rem; font-weight: 600; }
+    .pub-meta { color: var(--muted); margin-top: 4px; font-size: 0.95rem; }
+    .pub-link { font-weight: 600; color: var(--text); text-decoration: none; }
+    .pub-link:hover { text-decoration: underline; text-underline-offset: 3px; }
     .project-list {
       border-top: 1px solid var(--line);
     }
@@ -209,6 +265,19 @@
         <span class="chip">Continual learning</span>
         <span class="chip">Effective reasoning</span>
         <span class="chip">Test-time scaling</span>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="pub-list">
+        <div class="pub">
+          <div class="pub-title">Overthinking Detectors Transfer to New Models, Not New Tasks</div>
+          <div class="pub-meta">
+            Lea Li &middot; 2026 &middot;
+            <a class="pub-link" href="overthinking-detectors-2026.pdf" target="_blank" rel="noopener">[PDF]</a>
+          </div>
+        </div>
       </div>
     </section>
 
