@@ -186,7 +186,6 @@
     .panel {
       border-top: 1px solid var(--text);
       padding-top: 14px;
-      min-height: 250px;
     }
     .panel-title {
       font-size: 1rem;
@@ -194,24 +193,7 @@
       margin-bottom: 6px;
     }
     .panel-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; }
-    .doodle {
-      width: 100%;
-      height: 120px;
-      margin: 10px 0 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .doodle svg { width: 100%; height: 100%; }
     .panel-text { color: #333; font-size: 0.97rem; }
-    .placeholder {
-      width: 100%; height: 120px;
-      border: 1px dashed var(--line-dark);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted);
-      font-size: 0.93rem;
-      margin: 10px 0 14px;
-    }
     footer {
       margin-top: 60px;
       padding-top: 18px;
@@ -241,7 +223,7 @@
           Lea Li <span class="cn">李冰睿</span>
           <span class="note">(like water is <a href="https://plato.stanford.edu/entries/rigid-designators/" target="_blank" rel="noopener">H<sub>2</sub>O</a>)</span>
         </h1>
-        <p class="affil">Student at NYU, interested in LLM research.</p>
+        <p class="affil">Student at NYU, interested in machine learning research built on large language models.</p>
         <p class="contact-line">
           <a href="mailto:bl3737@nyu.edu">bl3737@nyu.edu</a> &middot;
           <a href="https://github.com/wawawalea" target="_blank" rel="noopener">GitHub</a> &middot;
@@ -347,46 +329,21 @@
       <h2>When studying a machine learning problem, I like to ask:</h2>
       <div class="triptych">
         <div class="panel">
-          <div class="panel-title">1. What is the object of the study?</div>
-          <div class="panel-sub">Before measuring or optimizing something, I want to know what the thing actually is.</div>
-          <div class="doodle" aria-hidden="true">
-            <svg viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 84C34 76 47 73 61 74C71 75 76 80 88 79C97 78 103 70 111 66C125 59 141 58 154 64C165 69 171 78 181 81C195 85 208 82 230 72" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M62 75C67 56 81 46 96 46C109 46 116 56 116 67" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <circle cx="98" cy="56" r="1.7" fill="#111"/>
-              <path d="M110 58C118 51 126 49 136 50C151 52 160 61 161 73" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M160 74C163 63 173 56 184 56C194 56 202 62 205 73" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M202 69L214 63L206 75" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <p class="panel-text">Sometimes the hardest part of a project is deciding whether the thing we are probing or optimizing is a real object at all.</p>
+          <div class="panel-title">1. What is the object of study?</div>
+          <div class="panel-sub">Before I measure or optimize something, I ask what it actually is.</div>
+          <p class="panel-text">Often the real question is whether the thing we probe is a single object at all, or a loose set of case-specific cues.</p>
         </div>
 
         <div class="panel">
           <div class="panel-title">2. How does it work?</div>
-          <div class="panel-sub">Once an object is in view, I want to understand the dynamics that produce or use it.</div>
-          <div class="doodle" aria-hidden="true">
-            <svg viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M52 105H190" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M154 27C154 27 156 41 159 56" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M154 27C146 15 137 11 125 10" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M154 27C165 20 175 18 188 19" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M121 106C117 96 113 88 105 77C96 64 86 59 76 59" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <circle cx="156" cy="60" r="9" stroke="#111" stroke-width="2.2"/>
-              <path d="M78 60C78 76 79 83 81 105" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M78 69C68 69 62 73 57 79" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M78 70C87 70 94 73 100 80" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M78 60C76 48 82 39 92 39C103 39 108 48 105 57" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <p class="panel-text">I am interested in the mechanisms and learning dynamics behind a behavior, not just whether a metric moves.</p>
+          <div class="panel-sub">Once the object is clear, I ask what produces it.</div>
+          <p class="panel-text">I want the mechanism and the learning dynamics behind a behavior, not just whether a metric moves.</p>
         </div>
 
         <div class="panel">
-          <div class="panel-title">3. How do we study its adaptation, and to what extent?</div>
-          <div class="panel-sub">A local success is not yet a general one; I want to know what carries over, and where it breaks.</div>
-          <div class="placeholder">placeholder for sketch</div>
-          <p class="panel-text">In continual and post-training settings, the key question is often not whether change happened, but how far that change travels across tasks, prompts, and distributions.</p>
+          <div class="panel-title">3. How far does it transfer?</div>
+          <div class="panel-sub">A result on one setting is not a general result. I ask what transfers, and where it breaks.</div>
+          <p class="panel-text">In continual and post-training work, the question is not whether something changed. It is how far the change transfers across tasks, models, and distributions.</p>
         </div>
       </div>
     </section>
