@@ -1,0 +1,2218 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Mechanistic Interpretability in 2026: A Decision Forest</title>
+<meta name="description" content="An interactive map of the problems, methods, evidence standards, open disagreements, and metaphysical positions in mechanistic interpretability as of August 7, 2026.">
+<meta name="author" content="Lea Li">
+<link rel="canonical" href="https://wawawalea.github.io/mechanistic-interpretability-decision-forest-2026.html">
+<meta name="citation_title" content="Mechanistic Interpretability in 2026: A Decision Forest">
+<meta name="citation_author" content="Lea Li">
+<meta name="citation_publication_date" content="2026/08/07">
+<meta name="citation_public_url" content="https://wawawalea.github.io/mechanistic-interpretability-decision-forest-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mechanistic Interpretability in 2026: A Decision Forest">
+<meta property="og:description" content="Problems, methods, evidence standards, and all the isms.">
+<meta property="og:url" content="https://wawawalea.github.io/mechanistic-interpretability-decision-forest-2026.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Mechanistic Interpretability in 2026: A Decision Forest",
+  "description": "An interactive map of the problems, methods, evidence standards, open disagreements, and metaphysical positions in mechanistic interpretability as of August 7, 2026.",
+  "author": {
+    "@type": "Person",
+    "name": "Lea Li",
+    "url": "https://wawawalea.github.io/"
+  },
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "version": "1.0",
+  "url": "https://wawawalea.github.io/mechanistic-interpretability-decision-forest-2026.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Lea Li",
+    "url": "https://wawawalea.github.io/"
+  }
+}
+</script>
+<style>:root {
+  color-scheme: light dark;
+  background-color: transparent !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --main-surface-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));
+  --card: color-mix(in oklab, var(--foreground) 5%, transparent);
+  --card-foreground: var(--foreground);
+  --popover: light-dark(rgb(255 255 255), rgb(45 45 45));
+  --popover-foreground: var(--foreground);
+  --primary: light-dark(rgb(51 156 255), rgb(131 195 255));
+  --primary-foreground: light-dark(rgb(255 255 255), rgb(13 13 13));
+  --secondary: light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%));
+  --secondary-foreground: var(--foreground);
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: light-dark(
+    rgb(26 28 31 / 49.4%),
+    rgb(255 255 255 / 49.8%)
+  );
+  --accent: light-dark(rgb(229 242 255), rgb(13 39 63));
+  --accent-foreground: var(--primary);
+  --destructive: light-dark(rgb(226 85 7), rgb(255 133 73));
+  --border: light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%));
+  --input: light-dark(
+    rgb(26 28 31 / 11.8%),
+    color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+  );
+  --ring: light-dark(rgb(51 156 255), rgb(131 195 255 / 76%));
+  --font-size-base: 14px;
+  --red: light-dark(rgb(186 38 35), rgb(250 66 62));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, "Segoe UI", sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: 10px;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E");
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+  --color-background-primary: var(--background);
+  --color-text-primary: var(--foreground);
+  --color-border-secondary: var(--border);
+}
+
+:root[data-visualize-standalone] {
+  background-color: var(--background) !important;
+}
+
+/* Generic mobile code-block hosts provide light/dark mode but no series palette.
+   AppBlock hosts set all six variables themselves. */
+:root:not([data-app-block-surface]) {
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(#f3883b, #f59a56);
+  --viz-series-3: light-dark(#5dc977, #74d58b);
+  --viz-series-4: light-dark(#eb77b1, #f08fc0);
+  --viz-series-5: light-dark(#9b79ec, #aa91ef);
+  --viz-series-6: light-dark(#3ab9b1, #5acbc2);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html > body {
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+:root:not([data-app-block-surface]) > body {
+  padding: 12px;
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive > .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align="right"]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align="center"]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget > :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* The bundled tooltip runtime owns [data-tooltip]. AppBlock's CSS-only
+   pseudo-tooltip can widen dense grids even while hidden. */
+main [data-tooltip]::after {
+  content: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls > .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls > .form-label > :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--interactive-label-primary-default, var(--primary-foreground));
+  background: var(--interactive-bg-primary-default, var(--foreground));
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(
+    in srgb,
+    var(--interactive-label-primary-default, var(--primary-foreground)) 50%,
+    transparent
+  );
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type="file"] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type="file"]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type="file"]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type="color"] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: "";
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type="radio"]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: "";
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed="true"], [aria-selected="true"], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget > svg {
+  width: 100%;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+</style>
+<style>
+  .article-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 12px 52px;
+  }
+  .article-nav {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .article-header {
+    max-width: 820px;
+    margin-bottom: 42px;
+  }
+  .article-kicker,
+  .article-byline {
+    color: var(--muted-foreground);
+  }
+  .article-kicker {
+    margin-bottom: 10px;
+  }
+  .article-header h1 {
+    margin-bottom: 12px;
+  }
+  .article-deck {
+    font-size: var(--font-size-h3);
+    margin-bottom: 16px;
+  }
+  .citation-section {
+    max-width: 820px;
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+  .citation-section h2,
+  .citation-section p,
+  .citation-section details {
+    margin-bottom: 12px;
+  }
+  .citation-text,
+  .citation-section pre {
+    overflow-wrap: anywhere;
+  }
+  .citation-section pre {
+    overflow-x: auto;
+    padding: 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    white-space: pre-wrap;
+  }
+  @media (max-width: 600px) {
+    .article-shell { padding-inline: 4px; }
+    .article-nav { margin-bottom: 34px; }
+  }
+</style>
+</head>
+<body>
+<main class="article-shell">
+<nav class="article-nav" aria-label="Article navigation">
+  <a href="index.html">Home</a>
+  <a href="index.html#/writing">Writing</a>
+</nav>
+
+<header class="article-header">
+  <p class="article-kicker">Interactive research map</p>
+  <h1>Mechanistic Interpretability in 2026: A Decision Forest</h1>
+  <p class="article-deck">Problems, methods, evidence standards, and all the isms.</p>
+  <p class="article-byline">Lea Li &middot; August 7, 2026 &middot; Version 1.0</p>
+</header>
+
+<div id="mi-decision-forest-2026">
+  <style>
+    #mi-decision-forest-2026 {
+      color: var(--foreground);
+      width: 100%;
+    }
+
+    #mi-decision-forest-2026 .forest-controls {
+      margin-bottom: 12px;
+    }
+
+    #mi-decision-forest-2026 .forest-controls .form-label {
+      min-width: min(100%, 260px);
+    }
+
+    #mi-decision-forest-2026 .figure-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 4px 0 8px;
+      font-weight: 500;
+    }
+
+    #mi-decision-forest-2026 .topic-path {
+      color: var(--muted-foreground);
+      font-weight: 400;
+    }
+
+    #mi-decision-forest-2026 .forest-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    #mi-decision-forest-2026 .forest-svg .edge {
+      fill: none;
+      stroke: var(--muted-foreground);
+      stroke-width: 1.5;
+    }
+
+    #mi-decision-forest-2026 .forest-svg .edge-label {
+      fill: var(--muted-foreground);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-rect {
+      stroke: var(--border);
+      stroke-width: 1.5;
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-input .node-rect {
+      fill: color-mix(in srgb, var(--viz-series-4) 14%, var(--background));
+      stroke: color-mix(in srgb, var(--viz-series-4) 55%, var(--border));
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-question .node-rect {
+      fill: var(--card);
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-topic .node-rect {
+      fill: color-mix(in srgb, var(--viz-series-1) 10%, var(--background));
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-2026 .node-rect {
+      fill: color-mix(in srgb, var(--viz-series-2) 14%, var(--background));
+      stroke: color-mix(in srgb, var(--viz-series-2) 55%, var(--border));
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-recent .node-rect {
+      fill: color-mix(in srgb, var(--viz-series-1) 12%, var(--background));
+      stroke: color-mix(in srgb, var(--viz-series-1) 50%, var(--border));
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-foundation .node-rect {
+      fill: color-mix(in srgb, var(--muted) 72%, var(--background));
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-outcome .node-rect {
+      fill: color-mix(in srgb, var(--viz-series-5) 13%, var(--background));
+      stroke: color-mix(in srgb, var(--viz-series-5) 50%, var(--border));
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-title {
+      fill: var(--foreground);
+      font-size: 19px;
+      font-weight: 500;
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-summary {
+      fill: var(--muted-foreground);
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    #mi-decision-forest-2026 .forest-svg .link-mark {
+      fill: var(--foreground);
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    #mi-decision-forest-2026 .forest-svg a:hover .node-rect,
+    #mi-decision-forest-2026 .forest-svg .node-navigate:hover .node-rect {
+      stroke: var(--ring);
+      stroke-width: 2.5;
+    }
+
+    #mi-decision-forest-2026 .forest-svg .node-navigate {
+      cursor: pointer;
+    }
+
+    #mi-decision-forest-2026 .forest-legend {
+      margin-top: 8px;
+      gap: 14px;
+      color: var(--muted-foreground);
+    }
+
+    #mi-decision-forest-2026 .legend-key {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #mi-decision-forest-2026 .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: inline-block;
+    }
+
+    #mi-decision-forest-2026 .legend-now {
+      background: color-mix(in srgb, var(--viz-series-2) 40%, var(--background));
+    }
+
+    #mi-decision-forest-2026 .legend-recent {
+      background: color-mix(in srgb, var(--viz-series-1) 36%, var(--background));
+    }
+
+    #mi-decision-forest-2026 .legend-root {
+      background: var(--muted);
+    }
+
+    #mi-decision-forest-2026 .mobile-outline {
+      display: none;
+    }
+
+    #mi-decision-forest-2026 .mobile-stage {
+      margin: 0 0 18px;
+    }
+
+    #mi-decision-forest-2026 .mobile-stage h3 {
+      margin: 0 0 8px;
+    }
+
+    #mi-decision-forest-2026 .mobile-stage ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    #mi-decision-forest-2026 .mobile-stage li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      #mi-decision-forest-2026 .forest-svg {
+        display: none;
+      }
+
+      #mi-decision-forest-2026 .mobile-outline {
+        display: block;
+      }
+
+      #mi-decision-forest-2026 .topic-path {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <div class="viz-controls forest-controls">
+    <label class="form-label" for="mi-forest-view">View
+      <select class="form-select" id="mi-forest-view"></select>
+    </label>
+    <label class="form-label" for="mi-forest-topic">Place a topic in the master tree
+      <select class="form-select" id="mi-forest-topic">
+        <option value="">Select a topic</option>
+        <option value="representation">SAE / feature ontology</option>
+        <option value="circuits">Circuit tracing</option>
+        <option value="causal">Activation patching</option>
+        <option value="automation">NLA / automated explanations</option>
+        <option value="dynamics">Model diffing / universality</option>
+        <option value="safety">Hidden-goal auditing</option>
+        <option value="design">Weight-sparse / interpretable-by-design</option>
+        <option value="stances">Metaphysical positions / “isms”</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="figure-line">
+    <span id="mi-forest-label"></span>
+    <span class="topic-path" id="mi-forest-path"></span>
+  </div>
+
+  <svg class="forest-svg" id="mi-forest-svg" role="img" aria-labelledby="mi-forest-svg-title mi-forest-svg-desc"></svg>
+  <div class="mobile-outline" id="mi-forest-mobile"></div>
+
+  <div class="viz-row forest-legend" aria-label="Timeline and node legend">
+    <span class="legend-key"><span class="legend-dot legend-now"></span>2026 work</span>
+    <span class="legend-key"><span class="legend-dot legend-recent"></span>2024–2025 work</span>
+    <span class="legend-key"><span class="legend-dot legend-root"></span>Foundational work or method warning</span>
+    <span>Open a leaf marked ↗ to read its source. Open a topic node to enter its subtree.</span>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.getElementById("mi-decision-forest-2026");
+      const viewSelect = root.querySelector("#mi-forest-view");
+      const topicSelect = root.querySelector("#mi-forest-topic");
+      const label = root.querySelector("#mi-forest-label");
+      const pathLine = root.querySelector("#mi-forest-path");
+      const svg = root.querySelector("#mi-forest-svg");
+      const mobile = root.querySelector("#mi-forest-mobile");
+      const ns = "http://www.w3.org/2000/svg";
+
+      const paper = (title, year, summary, url, edge) => ({
+        title,
+        year,
+        summary,
+        url,
+        edge: edge || "work"
+      });
+
+      const topic = (title, summary, view, edge) => ({
+        title,
+        summary,
+        view,
+        kind: "topic",
+        edge: edge || "branch"
+      });
+
+      const outcome = (title, summary, edge) => ({
+        title,
+        summary,
+        kind: "outcome",
+        edge: edge || "result"
+      });
+
+      const trees = {
+        field: {
+          label: "Figure 1. Master problem tree: six questions organize the field",
+          path: "Start with a model behavior, then locate its explanandum.",
+          input: "Input: a model behavior or capability B",
+          stages: [
+            {
+              q: "Q1. Which internal variable should explain B?",
+              branches: [
+                topic("Architecture units", "Neurons, heads, and layers are native units, but they are often too coarse or polysemantic.", "representation", "Native parts"),
+                topic("Learned sparse features", "SAEs and transcoders rewrite activations or computations in a sparse basis.", "representation", "One-dimensional"),
+                topic("Subspaces and manifolds", "Some content needs a multidimensional geometric unit.", "representation", "Multidimensional"),
+                topic("Verbalizable states", "NLAs and J-space map activations to readable states, but they cover only part of the computation.", "automation", "Language interface")
+              ]
+            },
+            {
+              q: "Q2. How do these variables compose a computation?",
+              branches: [
+                topic("Prompt-local attribution graph", "This graph explains one prompt and one target token.", "circuits", "Single run"),
+                topic("Task-level circuit", "This circuit repeats across examples that express one behavior.", "circuits", "Task mechanism"),
+                topic("Algorithm or equivalence class", "A stable counterfactual role can define a mechanism when low-level circuits vary.", "circuits", "Functional structure"),
+                topic("Long-horizon process", "This view tracks states and routing across tokens, conversations, and agent trajectories.", "dynamics", "Dynamic process")
+              ]
+            },
+            {
+              q: "Q3. What evidence turns an explanation into a mechanism?",
+              branches: [
+                topic("Localization", "Probes, activation examples, and attribution identify candidate locations.", "causal", "Correlation"),
+                topic("Intervention", "Patching, ablation, and interchange tests ask whether a candidate changes behavior.", "causal", "Causal evidence"),
+                topic("Faithfulness and completeness", "An explanation must report how much original computation it preserves and omits.", "causal", "Surrogate quality"),
+                topic("Identification and robustness", "Baselines, intervention assumptions, and stability determine whether a causal claim is identified.", "causal", "Identification")
+              ]
+            },
+            {
+              q: "Q4. Under which changes does a mechanism remain the same?",
+              branches: [
+                topic("Prompt or paraphrase", "Different wordings of one task may activate different low-level paths.", "dynamics", "Input change"),
+                topic("Seed or SAE family", "A decomposition may change with initialization and training recipe.", "dynamics", "Measurement change"),
+                topic("Checkpoint or model", "Model diffing must decide whether geometry or causal role defines identity.", "dynamics", "Training change"),
+                topic("Architecture", "Universality may hold at the algorithmic motif rather than at exact components.", "dynamics", "Implementation change")
+              ]
+            },
+            {
+              q: "Q5. What is mechanistic understanding for?",
+              branches: [
+                topic("Basic science", "It explains learned algorithms, representation geometry, and capability formation.", "dynamics", "Understanding"),
+                topic("Debugging and control", "Internal variables can help locate errors, steer, edit, or unlearn behavior.", "automation", "Intervention"),
+                topic("Safety auditing", "Auditors search for hidden goals, evaluation awareness, and deception before behavior reveals them.", "safety", "Audit"),
+                topic("Interpretable by design", "Training or architecture is changed so that the model develops readable mechanisms.", "design", "Reconstruction")
+              ]
+            },
+            {
+              q: "Q6. Where did field-level reflection focus in 2026?",
+              branches: [
+                paper("Open Problems in Mechanistic Interpretability", "2025", "This agenda organizes decomposition, description, validation, and applications into shared research problems.", "https://arxiv.org/html/2501.16496v1", "Agenda"),
+                paper("The Quest for the Right Mediator", "2026", "Causal mediation unifies many methods, but the right analysis unit and standard evaluation remain open.", "https://aclanthology.org/2026.cl-1.10/", "Right unit"),
+                paper("Mechanistic Interpretability Needs Philosophy", "2026", "This work rejects one true decomposition and argues for mechanisms at several levels.", "https://arxiv.org/html/2506.18852v2", "Ontology"),
+                paper("Make Mechanistic Interpretability Auditable", "2026", "This work calls for reporting data, baselines, randomness, causal tests, and failure conditions.", "https://aclanthology.org/2026.acl-long.159/", "Audit standards"),
+                paper("Locate, Steer, and Improve", "2026", "This survey organizes actionable work into locating, steering, and improving internal objects.", "https://aclanthology.org/2026.findings-acl.502/", "Action framework")
+              ]
+            }
+          ]
+        },
+
+        diagnostic: {
+          label: "Figure 2. Claim diagnostic: what does an MI result establish?",
+          path: "The weakest step often jumps from readable or controllable to part of the normal computation.",
+          input: "Input: a mechanistic claim C",
+          stages: [
+            {
+              q: "1. Is the target behavior B operationally specified?",
+              branches: [
+                paper("Open Problems in MI", "2025", "Easy tasks can create streetlight interpretability without revealing important or general mechanisms.", "https://arxiv.org/html/2501.16496v1", "Unclear"),
+                outcome("Fix B, the model, the prompt distribution, and the metric", "Faithfulness needs a fixed explanandum.", "Clear")
+              ]
+            },
+            {
+              q: "2. What is mediator M, and why choose it?",
+              branches: [
+                topic("Neuron, head, or layer", "These units are built into the architecture, but they may not be natural functional units.", "representation", "Architecture"),
+                topic("SAE feature or subspace", "The learned decomposition is readable, but its canonical status is unproved.", "representation", "Learned unit"),
+                topic("NLA text or J-space", "The readable bottleneck is expressive, but it may omit or invent content.", "automation", "Language unit"),
+                paper("The Quest for the Right Mediator", "2026", "The key choice is the mediator that can support the intended causal claim.", "https://aclanthology.org/2026.cl-1.10/", "Methodology")
+              ]
+            },
+            {
+              q: "3. Does the evidence go beyond decodability and attribution?",
+              branches: [
+                outcome("Decodable or nameable only", "This shows accessible information, not normal use by the model.", "No"),
+                topic("Ablation, patching, or interchange", "Intervention strengthens the evidence, but its meaning still depends on the mediator and counterfactual.", "causal", "Yes"),
+                paper("Causal Abstraction", "2025", "A faithful simplification maps high-level variables to low-level interventions.", "https://jmlr.org/papers/v26/23-0058.html", "Formalization")
+              ]
+            },
+            {
+              q: "4. Does the intervention identify the normal path rather than create a new one?",
+              branches: [
+                paper("Interpretability Illusion", "2024", "A subspace intervention can use a dormant path and change behavior without locating the normal path.", "https://arxiv.org/abs/2311.17030", "New path"),
+                paper("Curse of Multiple Mediators", "2026", "Natural indirect effects mix mediator interactions, which can hide or inflate component importance.", "https://arxiv.org/abs/2606.27510", "Interactions"),
+                paper("Disclose Identification Assumptions", "2026", "Causal claims should state the baselines, interventions, and structural assumptions required for identification.", "https://arxiv.org/html/2605.08012v1", "Assumptions")
+              ]
+            },
+            {
+              q: "5. Is the explanation faithful, complete, and minimal?",
+              branches: [
+                paper("Circuit Tracing", "2025", "A local replacement can match outputs on benchmark prompts, but the proposed mechanism still needs perturbation tests.", "https://transformer-circuits.pub/2025/attribution-graphs/methods.html", "Surrogate"),
+                paper("MIB", "2025", "The benchmark compares methods on circuit and causal-variable localization rather than surface readability.", "https://proceedings.mlr.press/v267/mueller25a.html", "Benchmark"),
+                paper("Formal MI", "2026", "This framework proves circuit robustness, patching behavior, and minimality on a specified continuous input domain.", "https://arxiv.org/abs/2602.16823", "Guarantee")
+              ]
+            },
+            {
+              q: "6. Does the conclusion survive prompts, seeds, models, and out-of-distribution inputs?",
+              branches: [
+                paper("MI as Statistical Estimation", "2025→26", "Circuit discovery is an estimator, and EAP-IG is sensitive to sampling, paraphrase, and hyperparameters.", "https://arxiv.org/abs/2510.00845", "Variance"),
+                paper("Demystifying Circuit Variance", "2026", "This work separates resampling variance from template variance and uses CEAP to reduce part of the former.", "https://arxiv.org/abs/2606.16920", "Stability"),
+                paper("Many Circuits, One Mechanism", "2026", "Different circuits can implement one computation, so explanations need cross-condition transfer tests.", "https://arxiv.org/abs/2606.06267", "Equivalence")
+              ]
+            },
+            {
+              q: "7. Does it add value beyond black-box methods?",
+              branches: [
+                outcome("Scientific local explanation", "A narrow result can still reveal a real fact about one model and task.", "Science"),
+                outcome("Reliable control or debugging", "This use requires selectivity, side-effect, and out-of-distribution tests.", "Engineering"),
+                paper("AuditBench", "2026", "Scaffolded black-box methods rank first overall, while white-box tools help on only some hidden behaviors.", "https://alignment.anthropic.com/2026/auditbench/", "Auditing"),
+                outcome("Safety certificate", "As of August 7, 2026, no MI method can exclude hidden goals or deception.", "Not reached")
+              ]
+            }
+          ]
+        },
+
+        representation: {
+          label: "Figure 3. Representation and SAE tree: when does a feature count as an internal variable?",
+          path: "Vehicle shape → canonicality → causal use → effect stability.",
+          input: "Input: a candidate feature or decomposition R",
+          stages: [
+            {
+              q: "1. Is R one-dimensional or higher-dimensional?",
+              branches: [
+                paper("Scaling Monosemanticity", "2024", "The study scales SAE feature discovery to tens of millions of latents in Claude 3 Sonnet.", "https://transformer-circuits.pub/2024/scaling-monosemanticity/", "Sparse direction"),
+                paper("Not All Features Are 1-D", "2025", "Days and months form irreducible circular representations that the model uses for modular arithmetic.", "https://arxiv.org/abs/2405.14860", "Multidimensional"),
+                paper("Subspace-Aware SAEs", "2026", "A one-vector decoder conflicts with multidimensional features and can cause systematic feature splitting.", "https://arxiv.org/abs/2606.06333", "Subspace"),
+                paper("Compositional Neuron Groups", "2026", "SNMF extracts sparse groups of co-active MLP neurons and produces stronger causal steering than SAE and DiM baselines.", "https://aclanthology.org/2026.acl-long.1959/", "Group")
+              ]
+            },
+            {
+              q: "2. Is this decomposition canonical, complete, and atomic?",
+              branches: [
+                paper("A is for Absorption", "2024", "A seemingly monosemantic latent can fail where it should activate because child features absorb a parent feature.", "https://arxiv.org/abs/2409.14507", "Incomplete"),
+                paper("SAEs Do Not Find Canonical Units", "2025", "Wider SAEs add units, and meta-SAEs divide old units again, which argues against one atomic list.", "https://arxiv.org/abs/2502.04878", "Non-canonical"),
+                paper("Feature Consistency", "2026", "Run-to-run consistency is an independent evaluation axis, and suitable TopK recipes improve it.", "https://aclanthology.org/2026.acl-long.99/", "Repairable"),
+                paper("Random-Transformer Control", "2026", "Common auto-interpretability and reconstruction metrics often fail to distinguish trained from random transformers.", "https://arxiv.org/abs/2501.17727", "Null baseline")
+              ]
+            },
+            {
+              q: "3. Is R causally load-bearing in the normal computation?",
+              branches: [
+                paper("MIB", "2025", "SAE features do not beat raw neurons on these tasks, while supervised DAS best localizes predefined variables.", "https://proceedings.mlr.press/v267/mueller25a.html", "Cross-method"),
+                paper("Single-Token SAE Necessity", "2026", "Even simple token features have causal necessity that depends strongly on the SAE family and training recipe.", "https://arxiv.org/html/2607.20596v1", "Family effect"),
+                paper("Feature-Effect Geometry", "2026", "The downstream effect of one SAE feature usually changes with context, so stable one-dimensional steering is rare.", "https://arxiv.org/abs/2607.24645", "Context effect")
+              ]
+            },
+            {
+              q: "4. If there are no unique atoms, which repair should we use?",
+              branches: [
+                paper("SAEBench", "2025", "Researchers can choose an SAE with task-relevant scores for detection, disentanglement, reconstruction, and downstream utility.", "https://arxiv.org/abs/2503.09532", "Pragmatic"),
+                paper("Natural Language Autoencoders", "2026", "Readable text becomes the reconstruction bottleneck, which adds expressivity but allows omissions and hallucinations.", "https://transformer-circuits.pub/2026/nla/", "Language unit"),
+                paper("J-space and Global Workspace", "2026", "This work finds reportable and steerable directions used in higher-order reasoning, while much computation remains outside them.", "https://transformer-circuits.pub/2026/workspace/index.html", "Functional subspace"),
+                outcome("Explanatory pluralism", "Choose a resolution for prediction, control, or auditing instead of assuming one true decomposition.", "Pluralism")
+              ]
+            }
+          ]
+        },
+
+        circuits: {
+          label: "Figure 4. Circuit tree: what separates one prompt path from a transferable mechanism?",
+          path: "Scope → basis → faithfulness → uniqueness → guarantees.",
+          input: "Input: a circuit G claimed to implement behavior B",
+          stages: [
+            {
+              q: "1. Does G explain one prompt or a task distribution?",
+              branches: [
+                paper("IOI Circuit", "2022", "A hand-built 26-head circuit explains a narrow GPT-2 small task and serves as a strong baseline.", "https://arxiv.org/abs/2211.00593", "Task-level root"),
+                paper("Sparse Feature Circuits", "2025", "SAE features and attribution recover task circuits that are more semantic and editable.", "https://openreview.net/forum?id=I4e82CIDxv", "Feature circuit"),
+                paper("Circuit Tracing", "2025", "A CLT replacement model produces an attribution graph for one prompt and one target token.", "https://transformer-circuits.pub/2025/attribution-graphs/methods.html", "Prompt-local")
+              ]
+            },
+            {
+              q: "2. Which basis represents the circuit components?",
+              branches: [
+                paper("Circuits Sparse in Neuron Basis", "2026", "MLP neurons can be as sparse as SAE features and can form controllable circuits on several tasks.", "https://arxiv.org/abs/2601.22594", "Neurons"),
+                paper("Circuit Tracing", "2025", "Cross-layer transcoders use sparse features across MLP nonlinearities to simplify feature interactions.", "https://transformer-circuits.pub/2025/attribution-graphs/methods.html", "CLT features"),
+                paper("CircuitLasso", "2026", "Sparse linear regression approximates intervention-based feature-circuit learning at much lower cost.", "https://arxiv.org/abs/2606.16939", "Scalable search"),
+                paper("CLT-Forge", "2026", "This open-source pipeline trains cross-layer transcoders and supports explanations, graphs, and visualization.", "https://arxiv.org/abs/2603.21014", "Infrastructure")
+              ]
+            },
+            {
+              q: "3. Is G faithful to the original model rather than only to a replacement?",
+              branches: [
+                paper("Circuit Tracing Methods", "2025", "The largest 18-layer CLT matches the top token about half the time, so graphs need tests in the original model.", "https://transformer-circuits.pub/2025/attribution-graphs/methods.html", "Replacement gap"),
+                paper("On the Biology of an LLM", "2025", "Case studies test multilingual concepts, planning, and hidden-goal paths in Claude 3.5 Haiku, but they remain local and guided.", "https://transformer-circuits.pub/2025/attribution-graphs/biology.html", "Frontier cases"),
+                paper("MIB", "2025", "Attribution and mask optimization rank first overall on benchmark circuit-localization tasks.", "https://proceedings.mlr.press/v267/mueller25a.html", "Method comparison")
+              ]
+            },
+            {
+              q: "4. Is G a unique and stable circuit?",
+              branches: [
+                paper("MI as Statistical Estimation", "2025→26", "EAP-IG circuits have high structural variance under resampling, paraphrase, noise, and hyperparameter changes.", "https://arxiv.org/abs/2510.00845", "Estimator variance"),
+                paper("Demystifying Circuit Variance", "2026", "Rephrasing activates different circuits, while CEAP reduces part of the resampling variance.", "https://arxiv.org/abs/2606.16920", "Prompt variance"),
+                paper("Many Circuits, One Mechanism", "2026", "Phantom specialization shows that structural difference need not imply functional difference.", "https://arxiv.org/abs/2606.06267", "Non-uniqueness")
+              ]
+            },
+            {
+              q: "5. Can robustness and minimality receive guarantees?",
+              branches: [
+                paper("Formal Mechanistic Interpretability", "2026", "Neural-network verification proves robustness, robust patching, and minimality on a specified continuous domain.", "https://arxiv.org/abs/2602.16823", "Domain guarantee"),
+                paper("Certified Circuits", "2026", "The method certifies component-inclusion stability under concept-dataset edits and abstains on unstable nodes.", "https://arxiv.org/abs/2602.22968", "Data stability"),
+                outcome("Frontier-scale global circuit", "No method combines original-model fidelity, global completeness, cross-input stability, and readability.", "Not reached")
+              ]
+            }
+          ]
+        },
+
+        causal: {
+          label: "Figure 5. Causal validation tree: what can an intervention prove?",
+          path: "The mediator and counterfactual do the work. Interactions and off-manifold states are the weak points.",
+          input: "Input: an association between component M and behavior B",
+          stages: [
+            {
+              q: "1. Is the information merely present, or is it used in the normal computation?",
+              branches: [
+                outcome("Probe or top activations", "This only shows that B can be decoded from M or co-occurs with M.", "Decodable"),
+                paper("Causal Probing Reliability", "2025", "No probing intervention is reliable at every layer, and concept removal is especially unstable.", "https://arxiv.org/abs/2408.15510", "Probe caveat"),
+                paper("Causal Abstraction", "2025", "High-level and low-level interventions must correspond systematically, rather than only correlate.", "https://jmlr.org/papers/v26/23-0058.html", "Normal use")
+              ]
+            },
+            {
+              q: "2. Does the intervention produce a reachable counterfactual?",
+              branches: [
+                paper("Interpretability Illusion", "2024", "An artificial subspace edit may use a dormant path, so behavior change does not imply normal localization.", "https://arxiv.org/abs/2311.17030", "Off-path"),
+                paper("Hydra Effect", "2023", "Later layers can compensate for an ablated component, so a null effect does not imply no function.", "https://arxiv.org/abs/2307.15771", "Self-repair"),
+                outcome("Matched or on-manifold intervention", "Use natural paired activations, minimal pairs, and selectivity controls to constrain the claim.", "Repair")
+              ]
+            },
+            {
+              q: "3. Does a single-component effect mix interactions with other mediators?",
+              branches: [
+                paper("Curse of Multiple Mediators", "2026", "Natural indirect effects include pairwise and higher-order interactions, so greedy rankings can miss joint mechanisms.", "https://arxiv.org/abs/2606.27510", "Yes"),
+                outcome("Group or combinatorial interventions", "When interactions are large, report group effects instead of forcing credit onto isolated components.", "Repair")
+              ]
+            },
+            {
+              q: "4. Are the identification assumptions stated?",
+              branches: [
+                paper("The Quest for the Right Mediator", "2026", "Neurons, heads, subspaces, and circuits are different mediator choices with different trade-offs.", "https://aclanthology.org/2026.cl-1.10/", "Unit choice"),
+                paper("Disclose Identification Assumptions", "2026", "Successful validation does not complete causal identification, so assumptions need separate disclosure.", "https://arxiv.org/abs/2605.08012", "Assumptions"),
+                paper("Make MI Auditable", "2026", "The proposed checklist covers random baselines, data, seeds, causal tests, and reproducibility.", "https://aclanthology.org/2026.acl-long.159/", "Reporting")
+              ]
+            },
+            {
+              q: "5. Does the result report sampling and distributional uncertainty?",
+              branches: [
+                paper("MI as Statistical Estimation", "2025→26", "A discovered circuit is an estimator with variance, not a deterministic object.", "https://arxiv.org/abs/2510.00845", "Sampling"),
+                paper("MIB", "2025", "Ground-truth-oriented tasks separate circuit localization from causal-variable localization.", "https://proceedings.mlr.press/v267/mueller25a.html", "Benchmark"),
+                outcome("Strong local causal claim", "Use minimal pairs, bidirectional patches, necessity, sufficiency, selectivity, and replication across conditions.", "Strong protocol")
+              ]
+            }
+          ]
+        },
+
+        automation: {
+          label: "Figure 6. Automation tree: are we scaling hypothesis generation or reliable validation?",
+          path: "Automated discovery → description → refutation → metric reliability → infrastructure.",
+          input: "Input: millions of features or thousands of attribution-graph nodes",
+          stages: [
+            {
+              q: "1. Are we automating discovery or explanation?",
+              branches: [
+                paper("Agent Feature Discovery", "2026", "An agent creates prompt controls, searches activation neighborhoods, and stress-tests feature hypotheses.", "https://arxiv.org/abs/2605.01555", "Features"),
+                paper("MechRL", "2026", "Head-level causal search becomes an RL environment, and the discovery policy transfers across small-model tasks.", "https://arxiv.org/abs/2605.26343", "Circuits"),
+                paper("CircuitLasso", "2026", "Sparse regression replaces expensive feature-by-feature intervention search.", "https://arxiv.org/abs/2606.16939", "Scaling"),
+                paper("LLMs Can Annotate Attribution Graphs", "2026-08", "Automated supernode labels recover 97 of 100 intermediate-hop nodes on two-hop Capitals prompts.", "https://arxiv.org/abs/2608.02632", "Graph annotation")
+              ]
+            },
+            {
+              q: "2. Is the automated output a label or a reconstructive code?",
+              branches: [
+                paper("Descriptive Collision", "2026", "Many distinct SAE features receive the same description, while current detection scores miss the collision.", "https://arxiv.org/abs/2605.12874", "Label failure"),
+                paper("Natural Language Autoencoders", "2026", "Text reconstructs activations, so descriptions face reconstruction pressure rather than only fitting top examples.", "https://transformer-circuits.pub/2026/nla/", "Text code"),
+                paper("J-space", "2026", "The method finds directions that the model is ready to verbalize and connects them to attribution graphs.", "https://transformer-circuits.pub/2026/workspace/index.html", "Verbalizable basis")
+              ]
+            },
+            {
+              q: "3. Can an agent design and complete decisive validation?",
+              branches: [
+                paper("AgenticInterpBench and HyVE", "2026", "Agents often propose plausible explanations but fail on validation plans, code execution, and unresolved counterexamples.", "https://arxiv.org/abs/2606.24026", "Current state"),
+                outcome("Self-validating interpreter", "The target system should construct counterexamples and discriminating interventions. It is not reliable yet.", "Goal")
+              ]
+            },
+            {
+              q: "4. Are the automated metrics reliable?",
+              branches: [
+                paper("SAEBench", "2025", "Results on more than 200 SAEs show that proxy improvements do not reliably become practical utility.", "https://arxiv.org/abs/2503.09532", "Multiple metrics"),
+                paper("Are SAE Benchmarks Reliable?", "2026", "Several common metrics violate reliability criteria and have limited power to separate similar architectures.", "https://arxiv.org/abs/2605.18229", "Metric audit"),
+                paper("Random-Transformer Control", "2026", "Random transformers can receive high auto-interpretability scores, so routine null models are needed.", "https://arxiv.org/abs/2501.17727", "Null model"),
+                paper("Feature Consistency", "2026", "Automated pipelines should report reproducibility across runs, not only a single explanation score.", "https://aclanthology.org/2026.acl-long.99/", "Repeatability")
+              ]
+            },
+            {
+              q: "5. Does the infrastructure support cross-layer analysis, long conversations, and human review?",
+              branches: [
+                paper("CLT-Forge", "2026", "This end-to-end CLT toolkit supports training, caching, automated explanation, circuit tracing, and visualization.", "https://arxiv.org/abs/2603.21014", "Cross-layer"),
+                paper("HeadVis", "2026", "The interface combines attention-head hypotheses, QK and OV inspection, and SAE attribution.", "https://transformer-circuits.pub/2026/headvis/index.html", "Attention"),
+                paper("Nested SAE Long-Conversation Graphs", "2026", "Turn-averaged and token features trace a 14-turn conversation and measure graph completeness.", "https://transformer-circuits.pub/2026/june-update/index.html", "Long horizon")
+              ]
+            }
+          ]
+        },
+
+        dynamics: {
+          label: "Figure 7. Robustness, dynamics, and model diffing: which changes preserve mechanism identity?",
+          path: "Prompt distribution → seed and recipe → checkpoint and model → architecture → formation.",
+          input: "Input: mechanism K found in model M under condition D",
+          stages: [
+            {
+              q: "1. Is K stable under resampling and paraphrase?",
+              branches: [
+                paper("MI as Statistical Estimation", "2025→26", "EAP-IG shows high variance under input resampling, prompt rewrites, and hyperparameter changes.", "https://arxiv.org/abs/2510.00845", "Unstable"),
+                paper("Demystifying Circuit Variance", "2026", "This work separates template-induced and sample variance, and sparsity alone removes neither.", "https://arxiv.org/abs/2606.16920", "Variance sources")
+              ]
+            },
+            {
+              q: "2. Is K stable across random seeds and representation recipes?",
+              branches: [
+                paper("Feature Consistency", "2026", "SAE consistency across runs can improve, but it needs to become a standard report item.", "https://aclanthology.org/2026.acl-long.99/", "Seed"),
+                paper("Single-Token SAE Necessity", "2026", "Causal necessity in one base model can change across SAE families.", "https://arxiv.org/html/2607.20596v1", "Recipe")
+              ]
+            },
+            {
+              q: "3. How should K match across checkpoints or models?",
+              branches: [
+                paper("Sparse Crosscoders", "2024", "Joint reconstruction across layers and models learns shared and model-specific features.", "https://transformer-circuits.pub/2024/crosscoders/index.html", "Shared basis"),
+                paper("Crosscoder Diffing Update", "2025", "Model diffing locates differences but also reveals confounds from symmetry and polysemanticity.", "https://transformer-circuits.pub/2025/crosscoder-diffing-update/index.html", "Limitations"),
+                paper("MoE vs Dense Crosscoders", "2026", "A shared crosscoder compares feature organization in MoE and dense models with matched active parameters.", "https://arxiv.org/abs/2603.05805", "Architecture diff")
+              ]
+            },
+            {
+              q: "4. Does universality require the same parts or the same algorithm?",
+              branches: [
+                paper("Transformer–Mamba Universality", "2024", "The two architectures learn many similar features and analogous induction motifs, while retaining structural differences.", "https://arxiv.org/abs/2410.06672", "Motif level"),
+                paper("Many Circuits, One Mechanism", "2026", "Different edges can be interchangeable and share a functional core, which supports algorithm-level identity.", "https://arxiv.org/abs/2606.06267", "Functional identity"),
+                outcome("Exact component universality", "The strong claim that the same neuron, head, or edge persists across models is unsupported.", "Strong claim")
+              ]
+            },
+            {
+              q: "5. How does K form during training?",
+              branches: [
+                paper("What Needs to Go Right for an Induction Head?", "2024", "The study separates data, architecture, and optimization conditions that support induction-head formation.", "https://arxiv.org/abs/2404.07129", "Empirical dynamics"),
+                paper("Provable Induction-Head Dynamics", "2024", "In a controlled Markov setting, gradient flow converges to a copier-selector-classifier mechanism.", "https://arxiv.org/abs/2409.10559", "Theory"),
+                outcome("Frontier post-training lineage", "We cannot yet trace how RLHF or RLVR turns local features and circuits into an agent policy.", "Open problem")
+              ]
+            }
+          ]
+        },
+
+        safety: {
+          label: "Figure 8. Safety auditing tree: when does white-box evidence beat behavioral auditing?",
+          path: "Blindness → model-organism validity → tool utility → control → adaptive robustness.",
+          input: "Input: a hidden goal, tendency, or evaluation awareness H",
+          stages: [
+            {
+              q: "1. Does the auditor know H in advance?",
+              branches: [
+                paper("Auditing Hidden Objectives", "2025", "Four blinded teams audit a reward-model-sycophancy organism using training data, behavior, and SAEs.", "https://www.anthropic.com/research/auditing-hidden-objectives", "Blind game"),
+                paper("On the Biology of an LLM", "2025", "Circuit tracing can test a suspected hidden-goal path, but the case studies often begin with strong priors.", "https://transformer-circuits.pub/2025/attribution-graphs/biology.html", "Known target")
+              ]
+            },
+            {
+              q: "2. Does H come from realistic training or an implanted behavior?",
+              branches: [
+                paper("Model Organism Lottery", "2026", "Results on 54 model organisms depend strongly on the objective, data, architecture, and implantation method.", "https://arxiv.org/abs/2607.01033", "External validity"),
+                outcome("Naturally emergent frontier behavior", "This is the real target, but it lacks ground truth and may react to the audit itself.", "Real target")
+              ]
+            },
+            {
+              q: "3. Does a white-box tool improve blind-audit success?",
+              branches: [
+                paper("AuditBench", "2026", "Across 56 hidden-behavior 70B models, scaffolded black-box auditing is best overall and white-box tools mainly help easier targets.", "https://alignment.anthropic.com/2026/auditbench/", "Benchmark"),
+                paper("Natural Language Autoencoders", "2026", "In one hidden-goal audit, detection rises from below 3% to about 12–15%, but most goals remain undiscovered.", "https://transformer-circuits.pub/2026/nla/", "Increment"),
+                outcome("Tool-to-agent gap", "Correct evidence does not ensure that an investigator forms the correct hypothesis.", "Bottleneck")
+              ]
+            },
+            {
+              q: "4. Is the goal detection or selective mitigation?",
+              branches: [
+                paper("SAE Refusal Steering", "2024", "Steering raises refusal on unsafe prompts but also causes over-refusal and general capability loss.", "https://arxiv.org/abs/2411.11296", "Steering"),
+                paper("CRISP", "2026", "Cross-layer SAE features support persistent concept unlearning by writing activation suppression into parameter updates.", "https://aclanthology.org/2026.acl-long.82/", "Unlearning"),
+                paper("Continuation-Triggered Jailbreak", "2026", "The study locates competition between continuation drive and safety heads, then changes jailbreak behavior by causal scaling.", "https://arxiv.org/abs/2603.08234", "Mechanism")
+              ]
+            },
+            {
+              q: "5. Is the method robust to adaptive concealment and deployment shift?",
+              branches: [
+                paper("AuditBench Adversarial Training", "2026", "Concealment training lowers confession to about 1–2%, which makes auditing much harder.", "https://alignment.anthropic.com/2026/auditbench/", "Adaptive target"),
+                paper("Model Organism Lottery", "2026", "Realistic integrated training often produces behavior that is harder to interpret than post-hoc SFT.", "https://arxiv.org/abs/2607.01033", "Training shift"),
+                outcome("Reliable safety assurance", "As of August 7, 2026, MI is a source of audit evidence, not an independent safety certificate.", "Current conclusion")
+              ]
+            }
+          ]
+        },
+
+        design: {
+          label: "Figure 9. Interpretable-by-design tree: can design replace post-hoc explanation?",
+          path: "Where to impose structure → semantic simplicity → capability → guarantees.",
+          input: "Input: post-hoc interpretation of a dense model is insufficient",
+          stages: [
+            {
+              q: "1. Should structure enter pretraining or post-training?",
+              branches: [
+                paper("Weight-Sparse Transformers", "2025", "Models with mostly zero weights yield small and rigorously validated circuits on simple tasks.", "https://arxiv.org/abs/2511.13653", "Train de novo"),
+                paper("Sparse Attention Post-Training", "2025→26", "A constrained objective reduces attention connectivity to about 0.4% while preserving pretraining loss.", "https://arxiv.org/abs/2512.05865", "Retrofit")
+              ]
+            },
+            {
+              q: "2. Does structural sparsity create semantic simplicity?",
+              branches: [
+                paper("Weight-Sparse Transformers", "2025", "On hand-built narrow tasks, sparse wiring corresponds to natural concepts and clear necessary or sufficient paths.", "https://openai.com/index/understanding-neural-networks-through-sparse-circuits/", "Positive evidence"),
+                paper("Sparse but Not Simpler", "2026", "ViT pruning removes edges but does not systematically improve neuron selectivity, SAE features, or attribution faithfulness.", "https://arxiv.org/abs/2603.15919", "Negative evidence")
+              ]
+            },
+            {
+              q: "3. Is the capability and interpretability trade-off acceptable?",
+              branches: [
+                paper("Weight-Sparse Scaling", "2025", "Larger models improve the trade-off, but scaling beyond tens of millions of nonzero parameters remains difficult.", "https://arxiv.org/abs/2511.13653", "Capacity cost"),
+                paper("Sparse Attention", "2025→26", "Results up to 7B preserve loss, but they do not prove global semantic interpretability.", "https://arxiv.org/abs/2512.05865", "Partial preservation")
+              ]
+            },
+            {
+              q: "4. Can interpretability receive formal certificates?",
+              branches: [
+                paper("Formal MI", "2026", "The framework proves circuit agreement, patching behavior, and minimality in a specified input region.", "https://arxiv.org/abs/2602.16823", "Verification"),
+                paper("Certified Circuits", "2026", "The method gives a probabilistic stability certificate for component inclusion under dataset perturbations.", "https://arxiv.org/abs/2602.22968", "Stability"),
+                outcome("Frontier interpretable-by-design LLM", "No system combines frontier capability, training efficiency, natural-task coverage, and global auditability.", "Not reached")
+              ]
+            }
+          ]
+        },
+
+        stances: {
+          label: "Figure 10. All the isms in MI: which repair follows from a failed explanation?",
+          path: "These are not exclusive schools. They are default commitments for different research goals.",
+          input: "Input: an explanation is not unique, stable, or useful",
+          stages: [
+            {
+              q: "1. Is there one true decomposition?",
+              branches: [
+                paper("Feature realism and monosemanticity", "2024", "The model contains sparse atomic features, and better methods should recover them more precisely.", "https://transformer-circuits.pub/2024/scaling-monosemanticity/", "Yes"),
+                paper("Pragmatic pluralism", "2025", "SAE features are not canonical, so researchers should choose a decomposition that fits the task.", "https://arxiv.org/abs/2502.04878", "No"),
+                paper("Explanatory pluralism", "2026", "Several mechanisms can be real at different levels, and the research goal selects the useful level.", "https://arxiv.org/html/2506.18852v2", "Reframe")
+              ]
+            },
+            {
+              q: "2. Does a mechanism require fixed parts?",
+              branches: [
+                paper("Componentism", "2022", "The same neurons, heads, and edges define the same circuit, so component overlap is central.", "https://arxiv.org/abs/2211.00593", "Yes"),
+                paper("Structural functionalism", "2026", "A cross-condition counterfactual role defines the mechanism and permits several circuit realizations.", "https://arxiv.org/abs/2606.06267", "No")
+              ]
+            },
+            {
+              q: "3. Is one causal effect enough to establish a mechanism?",
+              branches: [
+                paper("Causal interventionism", "2025", "Interchange interventions and causal abstraction map a high-level algorithm onto a low-level network.", "https://jmlr.org/papers/v26/23-0058.html", "Conditionally"),
+                paper("Identification skepticism", "2026", "An intervention effect still needs assumptions and analyses of interactions and off-manifold states.", "https://arxiv.org/html/2605.08012v1", "No")
+              ]
+            },
+            {
+              q: "4. What is the highest standard for explanatory success?",
+              branches: [
+                paper("Statisticalism", "2025→26", "Treat the circuit as an estimator and report variance, confidence, and sensitivity.", "https://arxiv.org/abs/2510.00845", "Repeatable"),
+                paper("Formalism", "2026", "Within a stated input domain, proof replaces heuristic faithfulness.", "https://arxiv.org/abs/2602.16823", "Provable"),
+                paper("Audit consequentialism", "2026", "Readability is not operational success unless the tool improves blinded audit outcomes.", "https://alignment.anthropic.com/2026/auditbench/", "Useful"),
+                paper("Engineering reconstruction", "2025", "If a dense model resists explanation, train a new model with sparse wiring.", "https://arxiv.org/abs/2511.13653", "Rebuild")
+              ]
+            }
+          ]
+        }
+      };
+
+      const viewOrder = [
+        ["field", "1. Master field tree"],
+        ["diagnostic", "2. General claim diagnostic"],
+        ["representation", "3. Representation and SAE"],
+        ["circuits", "4. Circuit discovery"],
+        ["causal", "5. Causal validation"],
+        ["automation", "6. Automation and evaluation"],
+        ["dynamics", "7. Robustness, dynamics, and diffing"],
+        ["safety", "8. Safety auditing"],
+        ["design", "9. Interpretable by design"],
+        ["stances", "10. Metaphysical positions and isms"]
+      ];
+
+      const topicPaths = {
+        representation: "Master path: Q1 representation → Q3 causal evidence → Q4 seed and recipe identity.",
+        circuits: "Master path: Q2 computation → Q3 faithfulness → Q4 prompt-level identity.",
+        causal: "Master path: Q3 intervention → identification → robustness.",
+        automation: "Master path: Q1 readable unit → Q3 validation → Q5 control and debugging.",
+        dynamics: "Master path: Q4 identity → checkpoint, model, and architecture → formation.",
+        safety: "Master path: Q5 safety audit → blind utility → adaptive robustness.",
+        design: "Master path: Q5 interpretable by design → capability trade-off → formal scope.",
+        stances: "Master path: decomposition → mechanism identity → causal standard → success criterion."
+      };
+
+      viewOrder.forEach(([value, text]) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = text;
+        viewSelect.appendChild(option);
+      });
+
+      function svgEl(name, attrs) {
+        const el = document.createElementNS(ns, name);
+        Object.entries(attrs || {}).forEach(([key, value]) => el.setAttribute(key, String(value)));
+        return el;
+      }
+
+      function textUnits(str) {
+        let total = 0;
+        for (const char of str) {
+          total += /[\u0000-\u00ff]/.test(char) ? 0.55 : 1;
+        }
+        return total;
+      }
+
+      function wrapText(str, maxUnits, maxLines) {
+        const tokens = str.match(/[\u3400-\u9fff]|[^\u3400-\u9fff\s]+|\s+/g) || [str];
+        const lines = [];
+        let line = "";
+        for (const token of tokens) {
+          const candidate = line + token;
+          if (line && textUnits(candidate) > maxUnits) {
+            lines.push(line.trim());
+            line = token.trimStart();
+            if (lines.length === maxLines) break;
+          } else {
+            line = candidate;
+          }
+        }
+        if (lines.length < maxLines && line.trim()) lines.push(line.trim());
+        if (lines.length > maxLines) lines.length = maxLines;
+        const joined = lines.join("");
+        if (joined.replace(/\s/g, "").length < str.replace(/\s/g, "").length && lines.length) {
+          lines[lines.length - 1] = lines[lines.length - 1].replace(/[，。；：,.!?\s]*$/, "") + "…";
+        }
+        return lines;
+      }
+
+      function nodeClass(node, role) {
+        if (role === "input") return "node-input";
+        if (role === "question") return "node-question";
+        if (node.kind === "outcome") return "node-outcome";
+        if (node.kind === "topic") return "node-topic";
+        if (String(node.year || "").includes("2026") || String(node.year || "").includes("→26")) return "node-2026";
+        if (node.year === "2024" || node.year === "2025") return "node-recent";
+        return "node-foundation";
+      }
+
+      function drawText(group, text, x, y, maxUnits, maxLines, cssClass, lineHeight) {
+        const el = svgEl("text", {x, y, class: cssClass});
+        wrapText(text, maxUnits, maxLines).forEach((line, index) => {
+          const tspan = svgEl("tspan", {x, dy: index === 0 ? 0 : lineHeight});
+          tspan.textContent = line;
+          el.appendChild(tspan);
+        });
+        group.appendChild(el);
+      }
+
+      function drawNode(node, x, y, w, h, role) {
+        let holder;
+        if (node.url) {
+          holder = svgEl("a", {href: node.url, target: "_blank", rel: "noopener noreferrer"});
+          holder.setAttribute("aria-label", `${node.title}: ${node.summary}`);
+        } else {
+          holder = svgEl("g", {});
+        }
+        const classes = ["forest-node", nodeClass(node, role)];
+        if (node.view) classes.push("node-navigate");
+        holder.setAttribute("class", classes.join(" "));
+        if (node.view) {
+          holder.setAttribute("role", "button");
+          holder.setAttribute("aria-label", `Open the ${node.title} subtree`);
+          holder.addEventListener("click", () => {
+            viewSelect.value = node.view;
+            topicSelect.value = node.view;
+            pathLine.textContent = topicPaths[node.view] || trees[node.view].path;
+            render(node.view);
+          });
+        }
+
+        const titleTip = svgEl("title", {});
+        titleTip.textContent = node.summary ? `${node.title}: ${node.summary}` : node.title;
+        holder.appendChild(titleTip);
+        holder.appendChild(svgEl("rect", {x, y, width: w, height: h, rx: 14, class: "node-rect"}));
+
+        const displayTitle = node.year ? `${node.title} · ${node.year}` : node.title;
+        const titleUnits = role === "question" || role === "input" ? 18 : 30;
+        const titleLines = wrapText(displayTitle, titleUnits, 2);
+        const titleY = y + 30;
+        titleLines.forEach((line, index) => {
+          drawText(holder, line, x + 16, titleY + index * 22, titleUnits, 1, "node-title", 22);
+        });
+
+        if (node.summary) {
+          const summaryY = titleY + titleLines.length * 22 + 8;
+          const summaryUnits = role === "question" ? 19 : 38;
+          const summaryLines = titleLines.length === 1 ? 3 : 2;
+          drawText(holder, node.summary, x + 16, summaryY, summaryUnits, summaryLines, "node-summary", 20);
+        }
+
+        if (node.url) {
+          const mark = svgEl("text", {x: x + w - 22, y: y + 25, class: "link-mark", "text-anchor": "middle"});
+          mark.textContent = "↗";
+          holder.appendChild(mark);
+        }
+        svg.appendChild(holder);
+      }
+
+      function drawEdge(x1, y1, x2, y2, edgeLabel, vertical) {
+        let path;
+        if (vertical) {
+          path = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else {
+          const bend = x1 + Math.max(24, (x2 - x1) * 0.46);
+          path = `M ${x1} ${y1} C ${bend} ${y1}, ${bend} ${y2}, ${x2} ${y2}`;
+        }
+        svg.appendChild(svgEl("path", {d: path, class: "edge", "marker-end": "url(#mi-arrow)"}));
+        if (edgeLabel) {
+          const text = svgEl("text", {
+            x: vertical ? x1 + 12 : x2 - 14,
+            y: vertical ? (y1 + y2) / 2 : y2 - 9,
+            class: "edge-label",
+            "text-anchor": vertical ? "start" : "end"
+          });
+          text.textContent = edgeLabel;
+          svg.appendChild(text);
+        }
+      }
+
+      function renderMobile(tree) {
+        mobile.replaceChildren();
+        const input = document.createElement("p");
+        const strong = document.createElement("strong");
+        strong.textContent = tree.input;
+        input.appendChild(strong);
+        mobile.appendChild(input);
+        tree.stages.forEach(stage => {
+          const section = document.createElement("section");
+          section.className = "mobile-stage";
+          const heading = document.createElement("h3");
+          heading.textContent = stage.q;
+          section.appendChild(heading);
+          const list = document.createElement("ul");
+          stage.branches.forEach(branch => {
+            const item = document.createElement("li");
+            let titleEl;
+            if (branch.url) {
+              titleEl = document.createElement("a");
+              titleEl.href = branch.url;
+              titleEl.target = "_blank";
+              titleEl.rel = "noopener noreferrer";
+            } else if (branch.view) {
+              titleEl = document.createElement("button");
+              titleEl.type = "button";
+              titleEl.className = "btn btn-ghost";
+              titleEl.addEventListener("click", () => {
+                viewSelect.value = branch.view;
+                topicSelect.value = branch.view;
+                pathLine.textContent = topicPaths[branch.view] || trees[branch.view].path;
+                render(branch.view);
+              });
+            } else {
+              titleEl = document.createElement("strong");
+            }
+            titleEl.textContent = branch.year ? `${branch.title} · ${branch.year}` : branch.title;
+            item.appendChild(titleEl);
+            if (branch.summary) item.appendChild(document.createTextNode(`: ${branch.summary}`));
+            list.appendChild(item);
+          });
+          section.appendChild(list);
+          mobile.appendChild(section);
+        });
+      }
+
+      function render(key) {
+        const tree = trees[key];
+        label.textContent = tree.label;
+        if (!pathLine.textContent || topicSelect.value === "") pathLine.textContent = tree.path;
+        svg.replaceChildren();
+
+        const defs = svgEl("defs", {});
+        const marker = svgEl("marker", {
+          id: "mi-arrow",
+          viewBox: "0 0 10 10",
+          refX: 9,
+          refY: 5,
+          markerWidth: 7,
+          markerHeight: 7,
+          orient: "auto-start-reverse"
+        });
+        marker.appendChild(svgEl("path", {d: "M 0 0 L 10 5 L 0 10 z", fill: "var(--muted-foreground)"}));
+        defs.appendChild(marker);
+        svg.appendChild(defs);
+
+        const titleNode = svgEl("title", {id: "mi-forest-svg-title"});
+        titleNode.textContent = tree.label;
+        svg.appendChild(titleNode);
+        const descNode = svgEl("desc", {id: "mi-forest-svg-desc"});
+        descNode.textContent = tree.path;
+        svg.appendChild(descNode);
+
+        const leftX = 24;
+        const leftW = 350;
+        const rightX = 530;
+        const rightW = 640;
+        const inputY = 16;
+        const inputH = 74;
+        const qH = 88;
+        const branchH = 116;
+        const branchGap = 14;
+        const stageGap = 34;
+        let y = 126;
+        const layouts = [];
+
+        tree.stages.forEach(stage => {
+          const blockH = Math.max(124, stage.branches.length * (branchH + branchGap) - branchGap);
+          layouts.push({stage, y, blockH});
+          y += blockH + stageGap;
+        });
+
+        const totalH = y + 20;
+        svg.setAttribute("viewBox", `0 0 1200 ${totalH}`);
+
+        drawNode({title: tree.input}, leftX, inputY, leftW, inputH, "input");
+        if (layouts.length) {
+          drawEdge(leftX + leftW / 2, inputY + inputH, leftX + leftW / 2, layouts[0].y, "Enter", true);
+        }
+
+        layouts.forEach((layout, stageIndex) => {
+          const qNode = {title: layout.stage.q};
+          drawNode(qNode, leftX, layout.y, leftW, qH, "question");
+          layout.stage.branches.forEach((branch, branchIndex) => {
+            const by = layout.y + branchIndex * (branchH + branchGap);
+            drawEdge(leftX + leftW, layout.y + qH / 2, rightX, by + branchH / 2, branch.edge, false);
+            drawNode(branch, rightX, by, rightW, branchH, "branch");
+          });
+          const next = layouts[stageIndex + 1];
+          if (next) {
+            drawEdge(leftX + leftW / 2, layout.y + qH, leftX + leftW / 2, next.y, "Continue", true);
+          }
+        });
+
+        renderMobile(tree);
+      }
+
+      viewSelect.addEventListener("change", () => {
+        topicSelect.value = "";
+        pathLine.textContent = trees[viewSelect.value].path;
+        render(viewSelect.value);
+      });
+
+      topicSelect.addEventListener("change", () => {
+        if (!topicSelect.value) {
+          viewSelect.value = "field";
+          pathLine.textContent = trees.field.path;
+          render("field");
+          return;
+        }
+        viewSelect.value = topicSelect.value;
+        pathLine.textContent = topicPaths[topicSelect.value];
+        render(topicSelect.value);
+      });
+
+      viewSelect.value = "field";
+      render("field");
+    })();
+  </script>
+</div>
+
+<section class="citation-section" id="cite">
+  <h2>Cite this map</h2>
+  <p>This research map can be cited as a web publication. The version and date identify the state of the map that you used.</p>
+  <p class="citation-text">Lea Li. 2026. “Mechanistic Interpretability in 2026: A Decision Forest.” Version 1.0, August 7, 2026. https://wawawalea.github.io/mechanistic-interpretability-decision-forest-2026.html</p>
+  <details>
+    <summary>BibTeX</summary>
+    <pre><code>@misc{li2026mechanistic,
+  author = {Lea Li},
+  title = {Mechanistic Interpretability in 2026: A Decision Forest},
+  year = {2026},
+  month = {August},
+  note = {Version 1.0},
+  url = {https://wawawalea.github.io/mechanistic-interpretability-decision-forest-2026.html}
+}</code></pre>
+  </details>
+</section>
+</main>
+
+<script id="codex-visualization-floating-ui-core" src="https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js"></script>
+<script id="codex-visualization-floating-ui-dom" src="https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js"></script>
+<script id="codex-visualization-lucide" async src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js"></script>
+<script id="codex-visualization-tooltip">/* oxlint-disable typescript/no-unsafe-argument, typescript/no-unsafe-call, typescript/no-unsafe-return */
+// Runs inside the visualization sandbox, not the host webview.
+(() => {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set(["top", "right", "bottom", "left"]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =>
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest("[data-tooltip]")
+      : null;
+  const containsTarget = (trigger, target) =>
+    target?.nodeType != null && trigger.contains(target);
+  const getContent = (trigger) =>
+    trigger.getAttribute("data-tooltip")?.trim() ?? "";
+  const getPlacement = (trigger) => {
+    const placement = trigger.getAttribute("data-tooltip-placement");
+    return tooltipPlacements.has(placement) ? placement : "top";
+  };
+  const getTooltip = () => {
+    if (tooltip == null) {
+      tooltip = document.createElement("div");
+      tooltip.id = tooltipId;
+      tooltip.className = "tooltip";
+      tooltip.setAttribute("role", "tooltip");
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) => {
+    const ids = new Set(
+      (trigger.getAttribute("aria-describedby") ?? "")
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute("aria-describedby");
+    } else {
+      trigger.setAttribute("aria-describedby", [...ids].join(" "));
+    }
+  };
+  const clearOpenTimeout = () => {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) => {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) => {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              "--tooltip-available-width",
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              "--tooltip-available-height",
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: "fixed",
+    })
+      .then(({ x, y }) => {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = "visible";
+      })
+      .catch(() => {
+        if (activeTrigger === trigger && request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) => {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = "hidden";
+    floating.style.transform = "translate(0, 0)";
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () => {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) => {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() < skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() => {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) => {
+    if (event.pointerType === "touch") {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) => {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) => {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(":focus-visible")) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) => {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () => {
+    closeTooltip(false);
+    document.removeEventListener("pointerover", handlePointerOpen);
+    document.removeEventListener("pointerout", handleLeave);
+    document.removeEventListener("focusin", handleFocusIn);
+    document.removeEventListener("focusout", handleLeave);
+    document.removeEventListener("keydown", handleKeyDown);
+    document.removeEventListener("contextmenu", handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener("pointerover", handlePointerOpen);
+  document.addEventListener("pointerout", handleLeave);
+  document.addEventListener("focusin", handleFocusIn);
+  document.addEventListener("focusout", handleLeave);
+  document.addEventListener("keydown", handleKeyDown);
+  document.addEventListener("contextmenu", handleContextMenu);
+  window.addEventListener("pagehide", destroy, { once: true });
+})();
+</script>
+<script id="codex-visualization-lucide-initialization">(() => {
+  const initialize = () => {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById("codex-visualization-lucide")
+    ?.addEventListener("load", initialize, { once: true });
+})();
+</script>
+</body>
+</html>
