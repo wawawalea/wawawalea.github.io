@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lea Li (李冰睿) — NYU | LLM Research</title>
+  <title>Lea Li (李冰睿) | NYU | LLM Research</title>
   <meta name="description" content="Lea Li (李冰睿) is a student at New York University (NYU) studying Computer Science, Mathematics, and Philosophy, interested in LLM research: technical alignment, mechanistic interpretability, continual learning, and reasoning." />
   <meta name="author" content="Lea Li" />
   <link rel="canonical" href="https://wawawalea.github.io/" />
 
   <!-- Open Graph / social + richer indexing signals -->
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Lea Li (李冰睿) — NYU" />
+  <meta property="og:title" content="Lea Li (李冰睿) | NYU" />
   <meta property="og:description" content="Lea Li, a student at NYU interested in LLM research: technical alignment, mechanistic interpretability, continual learning, and reasoning." />
   <meta property="og:url" content="https://wawawalea.github.io/" />
   <meta property="og:image" content="https://wawawalea.github.io/profile.png" />
@@ -60,19 +60,6 @@
       --chip: #f7f7f7;
       --hover: #f3f3f3;
       --max: 760px;
-      --tree-max: 1120px;
-      --pink: #fff1f5;
-      --pink-line: #db7b99;
-      --blue: #eef6ff;
-      --blue-line: #7aa9dd;
-      --green: #eef9f2;
-      --green-line: #76aa87;
-      --purple: #f4f1ff;
-      --purple-line: #9588d6;
-      --amber: #fff7e8;
-      --amber-line: #c7974f;
-      --coral: #fff0ec;
-      --coral-line: #c9836d;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -96,31 +83,7 @@
     h3 { font-size: 1rem; }
     p { margin: 0 0 14px; }
     a { color: inherit; text-underline-offset: 2px; }
-    [hidden] { display: none !important; }
     .muted { color: var(--muted); }
-    .site-nav {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 24px 24px 0;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 22px;
-      font-size: 0.94rem;
-    }
-    .site-nav a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .site-nav a:hover,
-    .site-nav a[aria-current="page"] {
-      color: var(--text);
-    }
-    .site-nav a[aria-current="page"] {
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
-    .site-nav + main { padding-top: 28px; }
     .masthead {
       display: grid;
       grid-template-columns: 104px 1fr;
@@ -238,291 +201,64 @@
       color: var(--muted);
       font-size: 0.95rem;
     }
-    .page-kicker {
+    .site-nav {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      z-index: 20;
+      display: flex;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+    }
+    .site-nav a {
+      padding: 6px 11px;
+      border-radius: 999px;
       color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
+      font-size: 0.9rem;
+      text-decoration: none;
     }
-    .writing-header h1 {
-      font-size: 2.35rem;
-      line-height: 1.08;
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: var(--text);
+      background: var(--hover);
     }
-    .writing-intro {
-      color: var(--muted);
-      margin-top: 14px;
-      max-width: 590px;
-    }
+    .route-page[hidden] { display: none; }
+    .writing-header { margin-bottom: 42px; }
+    .writing-header p { color: var(--muted); max-width: 620px; }
     .writing-list {
-      border-top: 1px solid var(--line-dark);
-      margin-top: 42px;
-    }
-    .writing-entry {
-      border-bottom: 1px solid var(--line);
-      padding: 24px 0 26px;
-    }
-    .writing-entry a {
-      display: block;
-      text-decoration: none;
-    }
-    .writing-entry a:hover .writing-title {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-    .writing-meta,
-    .article-meta {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    .writing-title {
-      font-size: 1.18rem;
-      font-weight: 600;
-      margin: 6px 0 7px;
-    }
-    .writing-summary {
-      color: #333;
-      max-width: 650px;
-    }
-    .back-link {
-      color: var(--muted);
-      display: inline-block;
-      font-size: 0.92rem;
-      margin-bottom: 30px;
-      text-decoration: none;
-    }
-    .back-link:hover { color: var(--text); }
-    .article-header h1 {
-      font-size: clamp(2.15rem, 5vw, 3.25rem);
-      line-height: 1.02;
-      max-width: 720px;
-    }
-    .article-deck {
-      color: #333;
-      font-size: 1.12rem;
-      line-height: 1.5;
-      margin: 18px 0 12px;
-      max-width: 690px;
-    }
-    .article-copy {
-      margin-top: 42px;
-      max-width: 680px;
-    }
-    .article-copy p { margin-bottom: 16px; }
-    .tree-breakout {
-      margin: 52px 0 0 50%;
-      transform: translateX(-50%);
-      width: min(var(--tree-max), calc(100vw - 32px));
-    }
-    .tree-caption {
-      align-items: flex-end;
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 20px;
-    }
-    .tree-caption h2 {
-      font-size: 1.28rem;
-      margin-bottom: 4px;
-    }
-    .tree-caption p {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin: 0;
-      max-width: 650px;
-    }
-    .tree-legend {
-      color: var(--muted);
-      flex: 0 0 auto;
-      font-size: 0.82rem;
-      white-space: nowrap;
-    }
-    .decision-tree {
-      --question-col: 320px;
-      position: relative;
-    }
-    .decision-tree::before {
-      border-left: 1.5px solid #9a9a9a;
-      content: "";
-      position: absolute;
-      left: calc(var(--question-col) / 2);
-      top: 78px;
-      bottom: 110px;
-      z-index: 0;
-    }
-    .tree-input {
-      background: var(--pink);
-      border: 1.5px solid var(--pink-line);
-      border-radius: 16px;
-      font-weight: 600;
-      line-height: 1.35;
-      margin: 0 0 42px;
-      min-height: 86px;
-      padding: 20px 22px;
-      position: relative;
-      width: var(--question-col);
-      z-index: 1;
-    }
-    .tree-stage {
-      align-items: center;
-      display: grid;
-      gap: 72px;
-      grid-template-columns: var(--question-col) minmax(0, 1fr);
-      padding-bottom: 46px;
-      position: relative;
-      z-index: 1;
-    }
-    .tree-question-wrap {
-      align-self: center;
-      position: relative;
-    }
-    .tree-question-wrap::after {
-      border-top: 1.5px solid #9a9a9a;
-      content: "";
-      left: 100%;
-      position: absolute;
-      top: 50%;
-      width: 36px;
-    }
-    .tree-question {
-      align-items: center;
-      background: var(--bg);
-      border: 1.5px solid var(--line-dark);
-      border-radius: 16px;
-      display: flex;
-      font-size: 1.02rem;
-      font-weight: 600;
-      line-height: 1.35;
-      min-height: 94px;
-      padding: 20px 22px;
-      position: relative;
-      z-index: 1;
-    }
-    .question-number {
-      color: var(--muted);
-      font-variant-numeric: tabular-nums;
-      margin-right: 10px;
-    }
-    .tree-branches {
-      display: grid;
-      gap: 12px;
-      position: relative;
-    }
-    .tree-branches::before {
-      border-left: 1.5px solid #9a9a9a;
-      bottom: 56px;
-      content: "";
-      left: -36px;
-      position: absolute;
-      top: 56px;
-    }
-    .stance-card {
-      align-items: flex-start;
-      border: 1.5px solid var(--line-dark);
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 112px;
-      padding: 18px 48px 18px 20px;
-      position: relative;
-      text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .stance-card::before {
-      border-top: 1.5px solid #9a9a9a;
-      content: "";
-      position: absolute;
-      right: 100%;
-      top: 50%;
-      width: 36px;
-    }
-    a.stance-card:hover {
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-      transform: translateY(-1px);
-    }
-    .stance-answer {
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-    }
-    .stance-title {
-      font-size: 1.03rem;
-      font-weight: 650;
-      line-height: 1.3;
-      margin: 0 0 5px;
-    }
-    .stance-summary {
-      color: #3f3f3f;
-      font-size: 0.92rem;
-      line-height: 1.45;
-      margin: 0;
-    }
-    .paper-mark {
-      font-size: 0.9rem;
-      position: absolute;
-      right: 18px;
-      top: 17px;
-    }
-    .tone-blue { background: var(--blue); border-color: var(--blue-line); }
-    .tone-green { background: var(--green); border-color: var(--green-line); }
-    .tone-purple { background: var(--purple); border-color: var(--purple-line); }
-    .tone-amber { background: var(--amber); border-color: var(--amber-line); }
-    .tone-coral { background: var(--coral); border-color: var(--coral-line); }
-    .tone-gray { background: #f5f5f3; border-color: #aaa9a5; }
-    .tree-note {
       border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.88rem;
-      margin-top: 4px;
-      padding-top: 16px;
     }
-    .article-end {
-      border-top: 1px solid var(--line-dark);
-      margin-top: 52px;
-      padding-top: 28px;
+    .writing-item {
+      display: block;
+      padding: 24px 0 26px;
+      border-bottom: 1px solid var(--line);
+      color: inherit;
+      text-decoration: none;
     }
-    .article-end h2 { margin-bottom: 12px; }
+    .writing-item:hover .writing-title { text-decoration: underline; text-underline-offset: 4px; }
+    .writing-meta { color: var(--muted); font-size: 0.92rem; margin-bottom: 7px; }
+    .writing-title { font-size: 1.16rem; font-weight: 600; }
+    .writing-summary { color: var(--muted); margin: 8px 0 0; max-width: 650px; }
     @media (max-width: 720px) {
-      .site-nav { padding-top: 18px; }
+      .site-nav { position: absolute; top: 12px; right: 14px; }
+      main { padding-top: 76px; }
       .masthead { grid-template-columns: 1fr; }
       .project-row { display: block; }
       .project-num { display: block; margin-bottom: 4px; }
       .drawer-inner { padding-left: 0; }
       .triptych { grid-template-columns: 1fr; gap: 28px; }
       .panel { min-height: unset; }
-      .writing-header h1 { font-size: 2rem; }
-      .article-header h1 { font-size: 2.2rem; }
-      .tree-breakout {
-        margin-left: 0;
-        transform: none;
-        width: 100%;
-      }
-      .tree-caption { align-items: flex-start; display: block; }
-      .tree-legend { margin-top: 8px; white-space: normal; }
-      .decision-tree::before,
-      .tree-question-wrap::after,
-      .tree-branches::before,
-      .stance-card::before { display: none; }
-      .tree-input { margin-bottom: 22px; width: 100%; }
-      .tree-stage {
-        display: block;
-        padding-bottom: 34px;
-      }
-      .tree-question { min-height: auto; }
-      .tree-branches { margin-top: 12px; }
-      .stance-card { min-height: auto; }
     }
   </style>
 </head>
 <body>
   <nav class="site-nav" aria-label="Primary navigation">
-    <a href="#/" data-nav="home">Home</a>
-    <a href="#/writing" data-nav="writing">Writing</a>
+    <a href="#/" data-route="home">Home</a>
+    <a href="#/writing" data-route="writing">Writing</a>
   </nav>
 
   <main id="home-page" class="route-page">
@@ -676,162 +412,17 @@
 
   <main id="writing-page" class="route-page" hidden>
     <header class="writing-header">
-      <p class="page-kicker">Writing</p>
-      <h1>Notes on machines and metaphysics</h1>
-      <p class="writing-intro">Short essays about questions that sit between machine learning and philosophy.</p>
+      <h1>Writing</h1>
+      <p>Research maps and essays on mechanistic interpretability, machine learning, and philosophy.</p>
     </header>
 
     <div class="writing-list">
-      <article class="writing-entry">
-        <a href="#/writing/all-the-isms-in-mechanistic-interpretability">
-          <div class="writing-meta">August 7, 2026 &middot; Mechanistic interpretability</div>
-          <div class="writing-title">All the Isms in Mechanistic Interpretability</div>
-          <p class="writing-summary">Mechanistic interpretability contains implicit positions about objects, identity, causation, and explanation. This decision tree makes those positions explicit.</p>
-        </a>
-      </article>
+      <a class="writing-item" href="mechanistic-interpretability-decision-forest-2026.html">
+        <div class="writing-meta">August 7, 2026 &middot; Interactive research map</div>
+        <div class="writing-title">Mechanistic Interpretability in 2026: A Decision Forest</div>
+        <p class="writing-summary">A structured map of the field's problems, methods, evidence standards, open disagreements, and metaphysical positions.</p>
+      </a>
     </div>
-
-    <footer>
-      <p>&copy; <span class="current-year"></span> Lea Li</p>
-    </footer>
-  </main>
-
-  <main id="isms-page" class="route-page" hidden>
-    <a class="back-link" href="#/writing">&larr; All writing</a>
-
-    <article>
-      <header class="article-header">
-        <p class="page-kicker">Mechanistic interpretability &middot; Metaphysics</p>
-        <h1>All the Isms in Mechanistic Interpretability</h1>
-        <p class="article-deck">A decision tree of the metaphysical positions that shape mechanistic interpretability in 2026.</p>
-        <p class="article-meta">August 7, 2026</p>
-      </header>
-
-      <div class="article-copy">
-        <p>Mechanistic interpretability makes claims about what exists inside a model. The field asks what counts as a feature. The field also asks when two circuits count as the same mechanism and what an intervention can prove.</p>
-        <p>The tree below makes these commitments explicit. The positions are not exclusive schools. A researcher may adopt different positions for different goals.</p>
-      </div>
-
-      <figure class="tree-breakout" aria-labelledby="isms-tree-title">
-        <figcaption class="tree-caption">
-          <div>
-            <h2 id="isms-tree-title">A decision tree of the isms</h2>
-            <p>Start with an explanation that is not unique, stable, or useful. Each question selects a different way to repair the claim.</p>
-          </div>
-          <div class="tree-legend">Linked cards open the source paper&nbsp;&#8599;</div>
-        </figcaption>
-
-        <div class="decision-tree">
-          <div class="tree-input">Input: an explanation is not unique, stable, or useful.</div>
-
-          <section class="tree-stage" aria-labelledby="tree-q1">
-            <div class="tree-question-wrap">
-              <div class="tree-question" id="tree-q1"><span class="question-number">1</span>Does one true decomposition exist?</div>
-            </div>
-            <div class="tree-branches">
-              <a class="stance-card tone-blue" href="https://transformer-circuits.pub/2024/scaling-monosemanticity/" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">Yes</span>
-                <h3 class="stance-title">Feature realism / monosemanticity</h3>
-                <p class="stance-summary">The model contains sparse atomic features, and better methods should recover them with greater precision.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-              <a class="stance-card tone-purple" href="https://arxiv.org/abs/2502.04878" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">No</span>
-                <h3 class="stance-title">Pragmatic pluralism</h3>
-                <p class="stance-summary">SAE features are not canonical, so researchers should choose a decomposition that fits the task.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-              <a class="stance-card tone-green" href="https://arxiv.org/html/2506.18852v2" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">Reframe</span>
-                <h3 class="stance-title">Explanatory pluralism</h3>
-                <p class="stance-summary">Several mechanisms can be real at different levels, and the research goal selects the useful level.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-            </div>
-          </section>
-
-          <section class="tree-stage" aria-labelledby="tree-q2">
-            <div class="tree-question-wrap">
-              <div class="tree-question" id="tree-q2"><span class="question-number">2</span>Do fixed parts determine the identity of a mechanism?</div>
-            </div>
-            <div class="tree-branches">
-              <a class="stance-card tone-gray" href="https://arxiv.org/abs/2211.00593" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">Yes</span>
-                <h3 class="stance-title">Componentism</h3>
-                <p class="stance-summary">Two circuits implement the same mechanism only when they use the same neurons, heads, and edges.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-              <a class="stance-card tone-blue" href="https://arxiv.org/abs/2606.06267" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">No</span>
-                <h3 class="stance-title">Structural functionalism</h3>
-                <p class="stance-summary">Two circuits implement the same mechanism when their parts play the same counterfactual roles across conditions.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-            </div>
-          </section>
-
-          <section class="tree-stage" aria-labelledby="tree-q3">
-            <div class="tree-question-wrap">
-              <div class="tree-question" id="tree-q3"><span class="question-number">3</span>Does one causal effect establish a mechanism?</div>
-            </div>
-            <div class="tree-branches">
-              <a class="stance-card tone-green" href="https://jmlr.org/papers/v26/23-0058.html" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">Conditionally</span>
-                <h3 class="stance-title">Causal interventionism</h3>
-                <p class="stance-summary">A high-level algorithm is supported when interchange interventions preserve a clear mapping to low-level variables.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-              <a class="stance-card tone-amber" href="https://arxiv.org/html/2605.08012v1" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">No</span>
-                <h3 class="stance-title">Identification skepticism</h3>
-                <p class="stance-summary">An intervention supports a mechanism only after the analysis states its baseline, interaction, and off-manifold assumptions.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-            </div>
-          </section>
-
-          <section class="tree-stage" aria-labelledby="tree-q4">
-            <div class="tree-question-wrap">
-              <div class="tree-question" id="tree-q4"><span class="question-number">4</span>What is the highest standard for a successful explanation?</div>
-            </div>
-            <div class="tree-branches">
-              <a class="stance-card tone-blue" href="https://arxiv.org/abs/2510.00845" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">Repeatable</span>
-                <h3 class="stance-title">Statisticalism</h3>
-                <p class="stance-summary">A circuit is an estimator, so a valid claim must report variance, confidence, and sensitivity.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-              <a class="stance-card tone-purple" href="https://arxiv.org/abs/2602.16823" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">Provable</span>
-                <h3 class="stance-title">Formalism</h3>
-                <p class="stance-summary">A proof within a stated input domain should replace heuristic claims of faithfulness.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-              <a class="stance-card tone-amber" href="https://alignment.anthropic.com/2026/auditbench/" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">Useful</span>
-                <h3 class="stance-title">Audit consequentialism</h3>
-                <p class="stance-summary">An explanation succeeds operationally only when it improves a blinded audit.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-              <a class="stance-card tone-coral" href="https://arxiv.org/abs/2511.13653" target="_blank" rel="noopener noreferrer">
-                <span class="stance-answer">Rebuild</span>
-                <h3 class="stance-title">Engineering reconstruction</h3>
-                <p class="stance-summary">If a dense model remains opaque, researchers should train a new model with sparse and inspectable wiring.</p>
-                <span class="paper-mark" aria-hidden="true">&#8599;</span>
-              </a>
-            </div>
-          </section>
-        </div>
-
-        <p class="tree-note">The labels name methodological commitments, not fixed communities. One paper may combine several positions.</p>
-      </figure>
-
-      <section class="article-end">
-        <h2>The central disagreement</h2>
-        <p>The central disagreement is not whether researchers should use SAEs or neurons. The disagreement concerns what those methods can discover.</p>
-        <p>Feature realism treats a decomposition as a candidate inventory of real internal parts. Pragmatic pluralism treats a decomposition as a tool chosen for a task. Other positions change the success criterion from accurate description to statistical stability, formal proof, audit value, or a redesigned model.</p>
-      </section>
-    </article>
 
     <footer>
       <p>&copy; <span class="current-year"></span> Lea Li</p>
@@ -843,47 +434,21 @@
       el.textContent = new Date().getFullYear();
     });
 
-    const routeConfig = {
-      '#/': {
-        page: 'home-page',
-        nav: 'home',
-        title: 'Lea Li (李冰睿) | NYU | LLM Research',
-        description: 'Lea Li is a student at NYU studying Computer Science, Mathematics, and Philosophy, with research interests in language models.'
-      },
-      '#/writing': {
-        page: 'writing-page',
-        nav: 'writing',
-        title: 'Writing | Lea Li',
-        description: 'Essays by Lea Li about machine learning and philosophy.'
-      },
-      '#/writing/all-the-isms-in-mechanistic-interpretability': {
-        page: 'isms-page',
-        nav: 'writing',
-        title: 'All the Isms in Mechanistic Interpretability | Lea Li',
-        description: 'A decision tree of the metaphysical positions that shape mechanistic interpretability in 2026.'
-      }
+    const routePages = {
+      home: document.getElementById('home-page'),
+      writing: document.getElementById('writing-page')
     };
 
     function renderRoute() {
-      const requestedRoute = window.location.hash || '#/';
-      const config = routeConfig[requestedRoute] || routeConfig['#/'];
-
-      document.querySelectorAll('.route-page').forEach((page) => {
-        page.hidden = page.id !== config.page;
+      const route = window.location.hash === '#/writing' ? 'writing' : 'home';
+      Object.entries(routePages).forEach(([name, page]) => {
+        page.hidden = name !== route;
       });
-
-      document.querySelectorAll('.site-nav a').forEach((link) => {
-        if (link.dataset.nav === config.nav) {
-          link.setAttribute('aria-current', 'page');
-        } else {
-          link.removeAttribute('aria-current');
-        }
+      document.querySelectorAll('[data-route]').forEach((link) => {
+        if (link.dataset.route === route) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
       });
-
-      document.title = config.title;
-      document.querySelector('meta[name="description"]').setAttribute('content', config.description);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
+      window.scrollTo(0, 0);
     }
 
     window.addEventListener('hashchange', renderRoute);
