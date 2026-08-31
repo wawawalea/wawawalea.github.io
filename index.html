@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lea Li (李冰睿) | NYU | LLM Research</title>
-  <meta name="description" content="Lea Li (李冰睿) is a student at New York University (NYU) studying Computer Science, Mathematics, and Philosophy, interested in LLM research: technical alignment, mechanistic interpretability, continual learning, and reasoning." />
+  <meta name="description" content="Lea Li (李冰睿) is a student at New York University (NYU) studying Computer Science, Mathematics, and Philosophy. She studies how knowledge works: metaphysics, epistemology, probability theory, causal inference, and LLM research including technical alignment, mechanistic interpretability, continual learning, and reasoning." />
   <meta name="author" content="Lea Li" />
   <link rel="canonical" href="https://wawawalea.github.io/" />
 
   <!-- Open Graph / social + richer indexing signals -->
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Lea Li (李冰睿) | NYU" />
-  <meta property="og:description" content="Lea Li, a student at NYU interested in LLM research: technical alignment, mechanistic interpretability, continual learning, and reasoning." />
+  <meta property="og:description" content="Lea Li, a student at NYU studying how knowledge works: philosophy, mathematics, and LLM research on alignment, interpretability, continual learning, and reasoning." />
   <meta property="og:url" content="https://wawawalea.github.io/" />
   <meta property="og:image" content="https://wawawalea.github.io/profile.png" />
   <meta property="profile:first_name" content="Lea" />
@@ -43,7 +43,13 @@
       "Technical AI Alignment",
       "Mechanistic Interpretability",
       "Continual Learning",
-      "Reasoning"
+      "Reasoning",
+      "Metaphysics",
+      "Epistemology",
+      "Modal Logic",
+      "Probability Theory",
+      "Mathematical Logic",
+      "Causal Inference"
     ],
     "sameAs": [
       "https://github.com/wawawalea"
@@ -108,6 +114,21 @@
     .affil { margin-top: 8px; color: var(--muted); }
     .contact-line { color: var(--muted); margin-top: 8px; }
     .about p:last-child { margin-bottom: 0; }
+    .topics {
+      margin: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+    .topic {
+      display: grid;
+      grid-template-columns: 215px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .topic-field { color: var(--muted); }
+    @media (max-width: 540px) {
+      .topic { grid-template-columns: 1fr; gap: 2px; }
+    }
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -287,10 +308,31 @@
         I'm a senior at New York University studying Computer Science, Mathematics, and Philosophy.
       </p>
       <p>
-        I am broadly interested in technical alignment, mechanistic interpretability, continual learning, effective reasoning, and post-training for language models.
+        Within machine learning, I work on post-training for large language models. My current topics include on-policy self-distillation, continual learning, and emergent misalignment. My research approaches technical alignment and effective reasoning as problems of understanding.
+      </p>
+      <p>
+        Behind this work is one broader question: how does knowledge work? I want to know how we know what we know, and how we can come to know what lies beyond our cognitive reach.
+      </p>
+      <div class="topics" aria-label="topics of interest">
+        <div class="topic">
+          <div class="topic-field">Topics in Philosophy</div>
+          <div class="topic-list">Metaphysics &middot; Epistemology &middot; Modal logic</div>
+        </div>
+        <div class="topic">
+          <div class="topic-field">Topics in Mathematics</div>
+          <div class="topic-list">Causal inference &middot; Probability theory &middot; Logic</div>
+        </div>
+        <div class="topic">
+          <div class="topic-field">Topics in Computer Science</div>
+          <div class="topic-list">Machine learning, with post-training of large language models as the vehicle</div>
+        </div>
+      </div>
+      <p>
+        The exchange between philosophy and computer science runs in both directions, and mathematics is the formal tool that lets the two fields genuinely communicate. In one direction, philosophy serves computer science. Metaphysics asks where the boundary of an object lies, and whether two things that look separate are in fact one; interpretability, alignment, and post-training methodology all depend on such questions. Mathematics then translates these questions into a language that can be computed. In the other direction, computer science serves philosophy. A neural network is, in effect, an axiomatized brain: a cognitive system built from mathematical foundations, and one we can inspect far more fully than our own. Such a network can help answer questions in epistemology, and machine compute reaches far beyond human compute, so I can push these questions further than a human alone could.
       </p>
       <div class="chips" aria-label="research keywords">
         <span class="chip">On-policy self-distillation</span>
+        <span class="chip">Emergent misalignment</span>
         <span class="chip">Technical alignment</span>
         <span class="chip">Mechanistic interpretability</span>
         <span class="chip">Continual learning</span>
