@@ -114,6 +114,21 @@
     .affil { margin-top: 8px; color: var(--muted); }
     .contact-line { color: var(--muted); margin-top: 8px; }
     .about p:last-child { margin-bottom: 0; }
+    .topics {
+      margin: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+    .topic {
+      display: grid;
+      grid-template-columns: 215px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .topic-field { color: var(--muted); }
+    @media (max-width: 540px) {
+      .topic { grid-template-columns: 1fr; gap: 2px; }
+    }
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -293,16 +308,27 @@
         I'm a senior at New York University studying Computer Science, Mathematics, and Philosophy.
       </p>
       <p>
-        Within machine learning, I work on post-training for large language models. My current topics include on-policy self-distillation, continual learning, and emergent misalignment. More broadly, I am interested in technical alignment, mechanistic interpretability, effective reasoning, and test-time scaling.
+        Within machine learning, I work on post-training for large language models. My current topics include on-policy self-distillation, continual learning, and emergent misalignment. My research approaches technical alignment and effective reasoning as problems of understanding.
       </p>
       <p>
         Behind this work is one broader question: how does knowledge work? I want to know how we know what we know, and how we can come to know what lies beyond our cognitive reach.
       </p>
+      <div class="topics" aria-label="topics of interest">
+        <div class="topic">
+          <div class="topic-field">Topics in Philosophy</div>
+          <div class="topic-list">Metaphysics &middot; Epistemology &middot; Modal logic</div>
+        </div>
+        <div class="topic">
+          <div class="topic-field">Topics in Mathematics</div>
+          <div class="topic-list">Causal inference &middot; Probability theory &middot; Logic</div>
+        </div>
+        <div class="topic">
+          <div class="topic-field">Topics in Computer Science</div>
+          <div class="topic-list">Machine learning, with post-training of large language models as the vehicle</div>
+        </div>
+      </div>
       <p>
-        Philosophy and mathematics serve my machine learning work directly. Metaphysics asks where the boundary of an object lies, and whether two things that look separate are in fact one. Interpretability, alignment, and post-training methodology all depend on such questions. Philosophy trains me to draw fine distinctions and, at the same time, to build a clean overall system. Mathematics gives me the tools for handling uncertainty; within it, I am drawn to probability theory, mathematical logic, and causal inference.
-      </p>
-      <p>
-        The exchange also runs the other way: computer science is a platform for philosophical experiments, with mathematics as the tool. A neural network is, in effect, a brain built from mathematics, and we can inspect it far more fully than our own. Machine compute also reaches far beyond human compute, so I can push these questions further than a human alone could. Within philosophy, I am drawn to metaphysics, epistemology, and modal logic.
+        The exchange between these fields runs in both directions. Metaphysics asks where the boundary of an object lies, and whether two things that look separate are in fact one. Interpretability, alignment, and post-training methodology all depend on such questions; philosophy trains me to draw fine distinctions and, at the same time, to build a clean overall system. In return, computer science gives philosophy a platform for experiments, with mathematics as the tool. A neural network is, in effect, a brain built from mathematics, and we can inspect it far more fully than our own. Machine compute also reaches far beyond human compute, so I can push these questions further than a human alone could.
       </p>
       <div class="chips" aria-label="research keywords">
         <span class="chip">On-policy self-distillation</span>
