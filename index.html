@@ -126,6 +126,13 @@
       border-bottom: 1px solid var(--line);
     }
     .topic-field { color: var(--muted); }
+    .aside {
+      font-size: 0.92rem;
+      color: var(--muted);
+      border-left: 2px solid var(--line-dark);
+      padding-left: 14px;
+      margin-top: 18px;
+    }
     @media (max-width: 540px) {
       .topic { grid-template-columns: 1fr; gap: 2px; }
     }
@@ -327,7 +334,7 @@
           <div class="topic-list">Machine learning, with post-training of large language models as the vehicle</div>
         </div>
       </div>
-      <p>
+      <p class="aside">
         The exchange between philosophy and computer science runs in both directions, and mathematics is the formal tool that lets the two fields genuinely communicate. In one direction, philosophy serves computer science. Metaphysics asks where the boundary of an object lies, and whether two things that look separate are in fact one; interpretability, alignment, and post-training methodology all depend on such questions. Mathematics then translates these questions into a language that can be computed. In the other direction, computer science serves philosophy. A neural network is, in effect, an axiomatized brain: a cognitive system built from mathematical foundations, and one we can inspect far more fully than our own. Such a network can help answer questions in epistemology, and machine compute reaches far beyond human compute, so I can push these questions further than a human alone could.
       </p>
       <div class="chips" aria-label="research keywords">
