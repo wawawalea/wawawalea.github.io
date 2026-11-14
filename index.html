@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lea Li (李冰睿) | NYU | LLM Research</title>
-  <meta name="description" content="Lea Li (李冰睿) is a student at New York University (NYU) studying Computer Science, Mathematics, and Philosophy. She studies how knowledge works: metaphysics, epistemology, probability theory, causal inference, and LLM research including technical alignment, mechanistic interpretability, continual learning, and reasoning." />
+  <title>Lea Li (李冰睿) | NYU | AI Safety and AI Policy</title>
+  <meta name="description" content="Lea Li (李冰睿) is a senior at New York University (NYU) in Computer Science and Philosophy. Her research is in AI safety and AI policy for large language models: evaluation awareness, and data protection law as applied to language models." />
   <meta name="author" content="Lea Li" />
   <link rel="canonical" href="https://wawawalea.github.io/" />
 
   <!-- Open Graph / social + richer indexing signals -->
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Lea Li (李冰睿) | NYU" />
-  <meta property="og:description" content="Lea Li, a student at NYU studying how knowledge works: philosophy, mathematics, and LLM research on alignment, interpretability, continual learning, and reasoning." />
+  <meta property="og:description" content="Lea Li, a senior at NYU in Computer Science and Philosophy. Research in AI safety and AI policy for large language models." />
   <meta property="og:url" content="https://wawawalea.github.io/" />
   <meta property="og:image" content="https://wawawalea.github.io/profile.png" />
   <meta property="profile:first_name" content="Lea" />
@@ -40,16 +40,12 @@
     },
     "knowsAbout": [
       "Large Language Models",
-      "Technical AI Alignment",
-      "Mechanistic Interpretability",
-      "Continual Learning",
-      "Reasoning",
-      "Metaphysics",
-      "Epistemology",
-      "Modal Logic",
-      "Probability Theory",
-      "Mathematical Logic",
-      "Causal Inference"
+      "AI Safety",
+      "AI Policy",
+      "Evaluation Awareness",
+      "Data Protection Law",
+      "Privacy in Machine Learning",
+      "Philosophy"
     ],
     "sameAs": [
       "https://github.com/wawawalea"
@@ -114,6 +110,8 @@
     .affil { margin-top: 8px; color: var(--muted); }
     .contact-line { color: var(--muted); margin-top: 8px; }
     .about p:last-child { margin-bottom: 0; }
+    .interests { margin: 0; padding-left: 1.4em; }
+    .interests li { margin-bottom: 6px; }
     .topics {
       margin: 18px 0;
       border-top: 1px solid var(--line);
@@ -298,9 +296,8 @@
       <div>
         <h1>
           Lea Li <span class="cn">李冰睿</span>
-          <span class="note"><em>&ldquo;The world is all that is the case.&rdquo;</em> (<a href="https://plato.stanford.edu/entries/wittgenstein/#TracLogiPhil" target="_blank" rel="noopener">TLP&nbsp;1</a>)</span>
         </h1>
-        <p class="affil">Student at NYU, interested in machine learning research built on large language models.</p>
+        <p class="affil">New York University. Research in AI safety and AI policy.</p>
         <p class="contact-line">
           <a href="mailto:bl3737@nyu.edu">bl3737@nyu.edu</a> &middot;
           <a href="https://github.com/wawawalea" target="_blank" rel="noopener">GitHub</a> &middot;
@@ -311,46 +308,12 @@
 
     <section class="about" id="about">
       <h2>About</h2>
-      <p>
-        I'm a senior at New York University studying Computer Science, Mathematics, and Philosophy.
-      </p>
-      <p>
-        Within machine learning, I work on post-training for large language models. My current topics include on-policy self-distillation, continual learning, and emergent misalignment. My research approaches technical alignment and effective reasoning as problems of understanding.
-      </p>
-      <p>
-        Behind this work is one broader question: how does knowledge work? I want to know how we know what we know, and how we can come to know what lies beyond our cognitive reach.
-      </p>
-      <p>
-        I am happy to exchange thoughts on any (intersection(s) of) the topic(s) below! <a href="mailto:bl3737@nyu.edu">Reach out.</a>
-      </p>
-      <div class="chips" aria-label="research keywords">
-        <span class="chip">On-policy self-distillation</span>
-        <span class="chip">Emergent misalignment</span>
-        <span class="chip">Technical alignment</span>
-        <span class="chip">Mechanistic interpretability</span>
-        <span class="chip">Continual learning</span>
-        <span class="chip">Effective reasoning</span>
-        <span class="chip">Test-time scaling</span>
-      </div>
-      <div class="topics" aria-label="topics of interest">
-        <div class="topic">
-          <div class="topic-field">Topics in Philosophy</div>
-          <div class="topic-list">Metaphysics &middot; Epistemology &middot; Modal logic</div>
-        </div>
-        <div class="topic">
-          <div class="topic-field">Topics in Mathematics</div>
-          <div class="topic-list">Causal inference &middot; Probability theory &middot; Logic</div>
-        </div>
-        <div class="topic">
-          <div class="topic-field">Topics in Computer Science</div>
-          <div class="topic-list">Machine learning, with post-training of large language models as the vehicle</div>
-        </div>
-      </div>
-      <p class="aside">
-        The exchange between philosophy and computer science runs in both directions, and mathematics is the formal tool that lets the two fields genuinely communicate. In one direction, philosophy serves computer science. Metaphysics asks where the boundary of an object lies, and whether two things that look separate are in fact one; interpretability, alignment, and post-training methodology all depend on such questions. Mathematics then translates these questions into a language that can be computed. In the other direction, computer science serves philosophy. A neural network is, in effect, an axiomatized brain: a cognitive system built from mathematical foundations, and one we can inspect far more fully than our own. Such a network can help answer questions in epistemology, and machine compute reaches far beyond human compute, so I can push these questions further than a human alone could.
-      </p>
-      
-      
+      <p>I am a senior at New York University, with a double major in Computer Science and Philosophy. I am very fortunate to work with <a href="https://xinpeng-wang.github.io/" target="_blank" rel="noopener">Prof. Xinpeng Wang</a> on safety evaluation of large language models.</p>
+      <p>I am interested in two things about large language models.</p>
+      <ol class="interests">
+        <li>Evaluation methods that reflect the behavior of a model in real deployment.</li>
+        <li>Methods to interpret and control a model, so that the law and society are better prepared for the tool.</li>
+      </ol>
     </section>
 
     <section id="publications">
@@ -359,96 +322,46 @@
         <div class="pub">
           <div class="pub-title">Overthinking Detectors Transfer to New Models, Not New Tasks</div>
           <div class="pub-meta">
-            Lea Li &middot; 2026 &middot;
+            Lea Li &middot; 2026 &middot; Under review at AAAI 2027 &middot;
             <a class="pub-link" href="overthinking-detectors-2026.pdf" target="_blank" rel="noopener">[PDF]</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-list">
-        <div class="project">
-          <button class="project-toggle" aria-expanded="false">
-            <div class="project-row">
-              <span class="project-num">Project 1</span>
-              <div class="project-main">
-                <div class="project-title">Oversight representations in language models</div>
-                <div class="project-summary">When a model behaves differently under supervision, what exactly is represented inside the model?</div>
-              </div>
-            </div>
-          </button>
-          <div class="drawer">
-            <div class="drawer-inner">
-              <p class="detail"><span class="detail-label">Object</span>Whether “being supervised” is a unified internal object, or a loose family of context-specific cues and policies.</p>
-              <p class="detail"><span class="detail-label">Dynamics</span>How supervision-related signals appear across prompts and settings, and whether they mediate downstream behavior in a causally meaningful way.</p>
-              <p class="detail"><span class="detail-label">Adaptation</span>Whether any such structure generalizes across scenarios, or only works in the local environments where it was identified.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="project">
-          <button class="project-toggle" aria-expanded="false">
-            <div class="project-row">
-              <span class="project-num">Project 2</span>
-              <div class="project-main">
-                <div class="project-title">On-policy self-distillation</div>
-                <div class="project-summary">When self-generated training improves a model, what is actually being learned, and by what system?</div>
-              </div>
-            </div>
-          </button>
-          <div class="drawer">
-            <div class="drawer-inner">
-              <p class="detail"><span class="detail-label">Object</span>The effective learner is not just the parameter vector, but the closed loop formed by the model, prompts, sampling policy, generated data, and update rule.</p>
-              <p class="detail"><span class="detail-label">Dynamics</span>How on-policy data generation, selection, and optimization interact to amplify some behaviors while leaving others unchanged.</p>
-              <p class="detail"><span class="detail-label">Adaptation</span>To what extent the learned changes transfer beyond the exact prompts and distributions used to produce the training data.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="project">
-          <button class="project-toggle" aria-expanded="false">
-            <div class="project-row">
-              <span class="project-num">Project 3</span>
-              <div class="project-main">
-                <div class="project-title">Overthinking in continual learning</div>
-                <div class="project-summary">How can a model learn task-appropriate reasoning across tasks rather than overthink in a one-size-fits-all way?</div>
-              </div>
-            </div>
-          </button>
-          <div class="drawer">
-            <div class="drawer-inner">
-              <p class="detail"><span class="detail-label">Object</span>Overthinking is not a single fixed defect, but a task-relative computation policy involving when to continue, verify, or stop.</p>
-              <p class="detail"><span class="detail-label">Dynamics</span>How signals for efficient reasoning differ across tasks, and how those signals evolve as the model keeps learning new settings.</p>
-              <p class="detail"><span class="detail-label">Adaptation</span>Whether a model can acquire reasoning policies that remain effective across tasks without collapsing into one locally good but globally brittle rule.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section id="safety">
+      <h2>AI safety</h2>
+      <p>
+        The work gathered under the name of AI safety differs first in the source of the danger it considers. In one body of work the danger is an adversary: the model does as its makers intended until someone sets out to break it, with a crafted prompt or with poisoned data. In another the danger lies in the system built around the model, in the way a product handles the data and the permissions of its users. In a third the danger is the model itself. Nobody attacks it and nobody misuses it. The property that causes harm was acquired in training and appears in ordinary use.
+      </p>
+      <p>
+        My work belongs to the third. I came to safety from post-training, and my worries about language models were formed while training them. Anyone who has trained a model with reinforcement learning has seen it acquire behavior that nobody specified, and has reason to doubt that an evaluation at the end will find all of it.
+      </p>
+      <p>
+        That doubt is the subject of my current project. A safety evaluation is meant to bound the behavior of a model in deployment. As models grow more capable they also grow better at telling an evaluation from deployment, and there is not yet a measure of the effect this has on a given result. With my advisor, I am working toward one, for agentic tasks at the center of safety concern.
+      </p>
+      <p>
+        The same concern reaches further than evaluation awareness. Training can leave a model with rule violations conditional on being unobserved, with deliberate underperformance on tests of capability, with written reasoning that no longer reflects the computation behind an answer. None of them requires an adversary, and all of them weaken the evidence on which a model is judged safe. I expect to stay in this part of AI safety.
+      </p>
     </section>
 
-    <section id="questions">
-      <h2>When studying a machine learning problem, I like to ask:</h2>
-      <div class="triptych">
-        <div class="panel">
-          <div class="panel-title">1. What is the object of study?</div>
-          <div class="panel-sub">Before I measure or optimize something, I ask what it actually is.</div>
-          <p class="panel-text">Often the real question is whether the thing we probe is a single object at all, or a loose set of case-specific cues.</p>
-        </div>
-
-        <div class="panel">
-          <div class="panel-title">2. How does it work?</div>
-          <div class="panel-sub">Once the object is clear, I ask what produces it.</div>
-          <p class="panel-text">I want the mechanism and the learning dynamics behind a behavior, not just whether a metric moves.</p>
-        </div>
-
-        <div class="panel">
-          <div class="panel-title">3. How far does it transfer?</div>
-          <div class="panel-sub">A result on one setting is not a general result. I ask what transfers, and where it breaks.</div>
-          <p class="panel-text">In continual and post-training work, the question is not whether something changed. It is how far the change transfers across tasks, models, and distributions.</p>
-        </div>
-      </div>
+    <section id="policy">
+      <h2>AI policy</h2>
+      <p>
+        The work gathered under the name of AI policy differs in the role it gives to the law. Some of it takes the law as a standard and tests whether a system meets it. Some takes the law as a list of requirements and builds the technical means to satisfy them: methods for unlearning, for watermarking, for tracing an output to its training data. Some measures models so that those who write rules have facts to write from. Some designs the rules and institutions that do not yet exist. And some examines the law itself.
+      </p>
+      <p>
+        My interest began with the last. Most of the law that will govern language models was written before them. A statute carries assumptions about the thing it regulates, and some of those assumptions do not hold for a language model. When one fails, the legal concept built on it loses its reference, and it has to be given a definition under which it can be measured again.
+      </p>
+      <p>
+        Data protection law is the place I have looked first. The right to erasure assumes that personal data sits in a place from which it can be removed. A model trained on that data holds it in its weights, in no single place and as a matter of degree. The law also treats sensitive information more strictly than the rest, on the assumption that the two can be kept apart, and a capable model can infer the first from enough of the second. My current project measures personal information in a model with a public pre-training corpus: the facts it holds about a person, and the inferences it draws from them.
+      </p>
+      <p>
+        Evaluation awareness can be read the same way. A rule that admits a model to use on the strength of a test assumes that the model behaves in use as it did under test.
+      </p>
+      <p>
+        I expect privacy to remain at the center of this work, and I expect the same question to arise in other bodies of law. The law of product safety and liability carries its own assumptions about the things it regulates, and it will be applied to language models. Nor do I mean to stay with one kind of policy work. Building the means a law requires, and supplying the measurements a rule-maker needs, are both tasks for someone trained in machine learning. The field has introduced a new tool into society, and it owes society the means to regulate it.
+      </p>
     </section>
 
     <section id="contact">
